@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require turbolinks
+//= require tagsinput.min
+//= require lazyload.min
+//= require mCustomScrollbar.min
 //= require_tree .
