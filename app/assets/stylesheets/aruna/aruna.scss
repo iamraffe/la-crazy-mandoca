@@ -142,7 +142,7 @@ header {
     // background-color: $purple;
     .user-box {
       @media(min-width: 768px){
-        width: 160px;
+        min-width: 160px;
         height: $header-height;
         background-color: $purple;
         float: left;
@@ -171,12 +171,17 @@ header {
 
       }
       figure {
-        width: 27px;
-        height: 27px;
+        margin-top: 25px;
+        margin-left: 25px;
         float: left;
+        img{
+          width: 27px;
+          height: 27px;
+        }
       }
       .name {
-        margin-left: 37px;
+        margin-left: 52px;
+        // margin-top: 25px;
         // line-height: 27px;
         @include font-Dosis;
         font-size: 14px;
