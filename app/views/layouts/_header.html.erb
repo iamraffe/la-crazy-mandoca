@@ -24,7 +24,10 @@
                             <% if user_signed_in? %>
                                 <li class="dropdown">
                                     <%= link_to '#', class: "dropdown-toggle", :data => {:toggle=>"dropdown"} do %>
-                                        <span class="name">Logout</span>
+                                        <figure>
+                                            <%= image_tag(current_user.image, width: '50', heigth: '50', class: 'img-circle') %>
+                                        </figure>
+                                        <span class="name"><%= current_user.username %></span>
                                     <% end %>
                                     <ul class="dropdown-menu drop-down">
                                         <li class="counters-line hidden-xs text-center">
