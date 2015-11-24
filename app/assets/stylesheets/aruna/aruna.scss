@@ -297,13 +297,13 @@ header {
   }
   .navbar-default .navbar-brand {
     height: $header-height;
-    width: 117px;
+    // width: 117px;
     float: left;
     text-align: center;
-    padding: 25px 30px;
+    padding: 15px 30px;
     img {
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 50px;
       display: inline-block;
     }
   }
@@ -1486,17 +1486,17 @@ footer {
       text-transform: uppercase;
     }
     hr {
-      border-top: solid 2px #262626;
+      border-top: solid 2px $purple;
     }
     .widget-content {
       @include set-default;
     }
     .footer-logo {
-      @include set-default;
-      text-align: center;
+      // @include set-default;
+      // text-align: center;
       margin-bottom: 20px;
       img {
-        display: inline-block;
+        // display: inline-block;
       }
     }
     p {

@@ -10,14 +10,14 @@
                         <span class="icon-bar"></span>
                     </button>
                     <%= link_to root_path, id: "logo", class: "navbar-brand" do %>
-                        <img src="http://placehold.it/60x20" alt=""/>
+                        <%= image_tag('la-crazy-mandoca-logo.png') %>
                     <% end %>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="/">Home</a></li>
-                        <li class=""><a href="/">Popular</a></li>
-                        <li class=""><a href="/">Mandoca</a></li>
+                        <li class="active"><a href="/">Categoría 1</a></li>
+                        <li class=""><a href="/">Categoría 2</a></li>
+                        <li class=""><a href="/">Categoría 3</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right ">
                         <div class="user-box <%= 'loggedout' unless user_signed_in? %>">

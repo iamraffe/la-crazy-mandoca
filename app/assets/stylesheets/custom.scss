@@ -58,3 +58,20 @@ form.login_form{
     margin-bottom: 0;
   }
 }
+
+/*
+
+FOOTER
+
+ */
+footer{
+  background-image: image-url('background-pattern.png');
+  background-color: white;
+
+  .footer-logo{
+    max-width: 160px;
+    display: block;
+    margin: 0 auto;
+    float: none;
+  }
+}
