@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
+  validates_uniqueness_of :username
   def self.new_with_session(params, session)
     super.tap do |user|
       # if data = session["devise.omniauth_data"] && session["devise.omniauth_data"]["extra"]["raw_info"]
