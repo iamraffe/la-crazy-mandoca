@@ -17,6 +17,10 @@ var Aruna = {
             .blur(function() {
                 $('.tagsinput').css({"border" : "solid 2px #e8e8e8"});
             });
+        $(document).on('submit','.form-disabled', function(e){
+            e.preventDefault();
+        });
+
         $('#agreeTerms').on('change', function() {
            if($(this).is(":checked")) {
                $('#error-button').fadeOut({
@@ -25,6 +29,7 @@ var Aruna = {
                    complete : function() {
                        $('#register-button').fadeIn(500);
                        $('.registration_form .social-auth-button').removeClass('disabled');
+                       $('.registration_form').removeClass('form-disabled');
                    }
                });
            } else {
@@ -34,6 +39,7 @@ var Aruna = {
                    complete : function() {
                         $('#error-button').fadeIn(500);
                         $('.registration_form .social-auth-button').addClass('disabled');
+                        $('.registration_form').addClass('form-disabled');
                    }
                });
            }
@@ -41,6 +47,7 @@ var Aruna = {
         jQuery("img.lazy").lazyload({
             effect : "fadeIn"
         });
+
         // $('#myCombobox').selectBoxIt({
         //     autoWidth: false
         // });
@@ -395,3 +402,5 @@ $(document).ready(function() {
 $(window).resize(function() {
    Aruna.resizeLeftSidebar();
 });
+
+

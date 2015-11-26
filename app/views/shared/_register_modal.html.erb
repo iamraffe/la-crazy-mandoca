@@ -1,227 +1,125 @@
-<!-- <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="modal-top-menu">
-                        <div class="half">
-                            <button class="btn btn-link btn-block active-ind" rel="register-window">Register new account</button>
-                        </div>
-                        <div class="half">
-                            <button class="btn btn-link btn-block" rel="login-window">Login</button>
-                        </div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-top-menu">
+                    <div class="half">
+                        <button class="btn btn-link btn-block" rel="register-window">Register new account</button>
                     </div>
-                    <div class="modal-window register-window">
-                        <form method="post" action="http://teothemes.com/wp/aruna/wp-login.php?action=register">
-                            <div class="row">
-                                <div class="col-sm-7 border-right">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Email:</span>
-                                        <input name="user_email" type="text" class="form-control" placeholder="teothemes@gmail.com">
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Username:</span>
-                                        <input name="user_login" type="text" class="form-control" placeholder="teothemes">
-                                    </div>
-                                </div>
-                                <div class="col-sm-5">
-                                    <div class="vertical-half">
-                                        <div class="custom-checkbox-vertical custom-checkbox">
-                                            <p>I promise only to have fun here and I fully agree with the</p>
-                                            <input type="checkbox" value="check1" name="check" id="agreeTerms" />
-                                            <label for="agreeTerms"><a target="_blank" href="#">Terms of Agreement.</a></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <input name="submit" id="register-button" type="submit" value="NICE, REGISTER ME!" class="btn btn-primary btn-block custom-button" />
-                                <a id="error-button" class="btn btn-block btn-info custom-button" target="_blank" href="http://teothemes.com/wp/tos">WHY DON'T YOU AGREE WITH OUR ToS?</a>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-window login-window">
-                                        <form class="login_form" method="post" action="http://teothemes.com/wp/aruna/wp-login.php">
-                        <div class="half-horizontal">
-                            <div class="input-group">
-                                <span class="input-group-addon">Username:</span>
-                                <input name="log" type="text" class="form-control" placeholder="teothemes" value="">
-                            </div>
-                        </div>
-                        <div class="half-horizontal">
-                            <div class="input-group">
-                                <span class="input-group-addon">Password:</span>
-                                <input name="pwd" type="password" class="form-control" placeholder="password" value="">
-                            </div>
-                        </div>
-                                                    <div style="text-align: center; clear: both; margin-bottom: 10px; position: relative; top: -15px;">
-                                <div class="new-fb-btn new-fb-1 new-fb-default-anim"><div class="new-fb-1-1"><div class="new-fb-1-1-1"><a href="http://teothemes.com/wp/aruna/wp-login.php?loginFacebook=1&redirect=http://teothemes.com/wp/aruna">CONNECT WITH</a></div></div></div><br />
-                            </div>
-                                                <div class="modal-footer">
-                            <input name="wp-submit" id="login-button" type="submit" value="LOGIN!" class="btn btn-primary btn-block custom-button" />
-                        </div>
-                        <input type="hidden" name="redirect_to" value="http://teothemes.com/wp/aruna" />
-                    </form>
+                    <div class="half">
+                        <button class="btn btn-link btn-block active-ind" rel="login-window">Login</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div> -->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="modal-top-menu">
-                        <div class="half">
-                            <button class="btn btn-link btn-block" rel="register-window">Register new account</button>
-                        </div>
-                        <div class="half">
-                            <button class="btn btn-link btn-block active-ind" rel="login-window">Login</button>
-                        </div>
-                    </div>
-                    <div class="modal-window register-window">
-                        <%= form_for(:user, url: registration_path(:user), :html => {:class => "registration_form"}) do |f| %>
-                            <div class="row">
-                                <div class="col-sm-8 border-right">
+                <div class="modal-window register-window">
+                    <%= form_for(:user, url: registration_path(:user), :html => {:class => "registration_form form-disabled"}) do |f| %>
+                        <div class="row">
+                            <div class="col-sm-8 border-right">
 
-                                    <div class="input-group">
-                                      <span class="input-group-addon">Username:</span>
-                                      <%= f.text_field :username, class: "form-control", autofocus: true %>
-                                    </div>
+                                <div class="input-group">
+                                  <span class="input-group-addon">Username:</span>
+                                  <%= f.text_field :username, class: "form-control", autofocus: true %>
+                                </div>
 
-                                    <div class="input-group">
-                                      <span class="input-group-addon">Email:</span>
-                                      <%= f.email_field :email, class: "form-control" %>
-                                    </div>
+                                <div class="input-group">
+                                  <span class="input-group-addon">Email:</span>
+                                  <%= f.email_field :email, class: "form-control" %>
+                                </div>
 
-                                    <div class="input-group">
-                                      <span class="input-group-addon">Password:</span>
-                                      <% if @minimum_password_length %>
-                                      <em>(<%= @minimum_password_length %> characters minimum)</em>
-                                      <% end %>
-                                      <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
-                                    </div>
+                                <div class="input-group">
+                                  <span class="input-group-addon">Password:</span>
+                                  <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+                                </div>
 
-                                    <div class="input-group">
-                                      <span class="input-group-addon">Confirm password:</span>
-                                      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+                                <div class="input-group">
+                                  <span class="input-group-addon">Confirm password:</span>
+                                  <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="vertical-half">
+                                    <div class="custom-checkbox-vertical custom-checkbox">
+                                        <p>I promise only to have fun here and I fully agree with the</p>
+                                        <input type="checkbox" value="check1" name="check" id="agreeTerms" />
+                                        <label for="agreeTerms"><a target="_blank" href="#">Terms of Agreement.</a></label>
                                     </div>
                                 </div>
-                                <div class="col-sm-4">
-                                    <div class="vertical-half">
-                                        <div class="custom-checkbox-vertical custom-checkbox">
-                                            <p>I promise only to have fun here and I fully agree with the</p>
-                                            <input type="checkbox" value="check1" name="check" id="agreeTerms" />
-                                            <label for="agreeTerms"><a target="_blank" href="#">Terms of Agreement.</a></label>
+                                <div class="vertical-half social-auth">
+                                    <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-block custom-button social-auth-button disabled facebook" do %>
+                                         <i class="fa fa-facebook"></i>
+                                        <span class="hidden-xs hide">Facebook</span>
+                                    <% end %>
+                                    <%= link_to user_omniauth_authorize_path(:twitter), class: "btn btn-primary btn-block custom-button social-auth-button disabled twitter" do %>
+                                        <i class="fa fa-twitter"></i>
+                                        <span class="hidden-xs hide">Twitter</span>
+                                    <% end %>
+                                    <%= link_to user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary btn-block custom-button social-auth-button disabled google" do %>
+                                        <i class="fa fa-google"></i>
+                                        <span class="hidden-xs hide">Google</span>
+                                    <% end %>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input name="submit" id="register-button" type="submit" value="NICE, REGISTER ME!" class="btn btn-primary btn-block custom-button" />
+                            <a id="error-button" class="btn btn-block btn-info custom-button disabled" href="">WHY DON'T YOU AGREE WITH OUR ToS?</a>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="modal-window login-window">
+                    <div class="col-xs-12">
+                        <%= form_for(:user, url: session_path(:user), :html => {:class => "login_form"}) do |f| %>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Email:</span>
+                                        <%= f.email_field :email, class: 'form-control' %>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Password:</span>
+                                        <%= f.password_field :password, class: 'form-control' %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="login-or">
+                                <hr class="hr-or">
+                                <span class="span-or">or</span>
+                            </div>
+                            <div class="row social-auth">
+                                <div class="col-xs-10 col-xs-offset-1">
+                                    <div class="row">
+                                        <div class="col-xs-4">
+                                            <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-block custom-button social-auth-button facebook" do %>
+                                                 <i class="fa fa-facebook"></i>
+                                                <span class="hidden-xs hide">Facebook</span>
+                                            <% end %>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <%= link_to user_omniauth_authorize_path(:twitter), class: "btn btn-primary btn-block custom-button social-auth-button twitter" do %>
+                                                <i class="fa fa-twitter"></i>
+                                                <span class="hidden-xs hide">Twitter</span>
+                                            <% end %>
+                                        </div>
+                                        <div class="col-xs-4">
+                                            <%= link_to user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary btn-block custom-button social-auth-button google" do %>
+                                                <i class="fa fa-google"></i>
+                                                <span class="hidden-xs hide">Google</span>
+                                            <% end %>
                                         </div>
                                     </div>
-                                    <div class="vertical-half social-auth">
-                                        <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-block custom-button social-auth-button disabled facebook" do %>
-                                             <i class="fa fa-facebook"></i>
-                                            <span class="hidden-xs hide">Facebook</span>
-                                        <% end %>
-                                        <%= link_to user_omniauth_authorize_path(:twitter), class: "btn btn-primary btn-block custom-button social-auth-button disabled twitter" do %>
-                                            <i class="fa fa-twitter"></i>
-                                            <span class="hidden-xs hide">Twitter</span>
-                                        <% end %>
-                                        <%= link_to user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary btn-block custom-button social-auth-button disabled google" do %>
-                                            <i class="fa fa-google"></i>
-                                            <span class="hidden-xs hide">Google</span>
-                                        <% end %>
-                                    </div>
                                 </div>
+
+                            </div>
+                            <div class="row">
                                 <div class="modal-footer">
-                                    <input name="submit" id="register-button" type="submit" value="NICE, REGISTER ME!" class="btn btn-primary btn-block custom-button" />
-                                    <a id="error-button" class="btn btn-block btn-info custom-button disabled" href="">WHY DON'T YOU AGREE WITH OUR ToS?</a>
+                                    <%= f.submit "Log in", class: "btn btn-primary btn-block custom-button" %>
                                 </div>
                             </div>
                         <% end %>
-<!--                         <form method="post" action="http://teothemes.com/wp/aruna/wp-login.php?action=register">
-                            <div class="row">
-                                <div class="col-sm-7 border-right">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Email:</span>
-                                        <input name="user_email" type="text" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Email:</span>
-                                        <input name="user_email" type="text" class="form-control" placeholder="">
-                                    </div>
-                                    <div class="input-group">
-                                        <span class="input-group-addon">Password:</span>
-                                        <input name="user_login" type="password" class="form-control" placeholder="">
-                                    </div>
-                                </div>
-                                <div class="col-sm-5">
-                                    <div class="vertical-half">
-                                        <div class="custom-checkbox-vertical custom-checkbox">
-                                            <p>I promise only to have fun here and I fully agree with the</p>
-                                            <input type="checkbox" value="check1" name="check" id="agreeTerms" />
-                                            <label for="agreeTerms"><a target="_blank" href="#">Terms of Agreement.</a></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <input name="submit" id="register-button" type="submit" value="NICE, REGISTER ME!" class="btn btn-primary btn-block custom-button" />
-                                <a id="error-button" class="btn btn-block btn-info custom-button disabled" href="">WHY DON'T YOU AGREE WITH OUR ToS?</a>
-                            </div>
-                        </form> -->
-                    </div>
-                    <div class="modal-window login-window">
-                        <div class="col-xs-12">
-                            <%= form_for(:user, url: session_path(:user), :html => {:class => "login_form"}) do |f| %>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">Email:</span>
-                                            <%= f.email_field :email, class: 'form-control' %>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="input-group">
-                                            <span class="input-group-addon">Password:</span>
-                                            <%= f.password_field :password, class: 'form-control' %>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="login-or">
-                                    <hr class="hr-or">
-                                    <span class="span-or">or</span>
-                                </div>
-                                <div class="row social-auth">
-                                    <div class="col-xs-10 col-xs-offset-1">
-                                        <div class="row">
-                                            <div class="col-xs-4">
-                                                <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-block custom-button social-auth-button facebook" do %>
-                                                     <i class="fa fa-facebook"></i>
-                                                    <span class="hidden-xs hide">Facebook</span>
-                                                <% end %>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <%= link_to user_omniauth_authorize_path(:twitter), class: "btn btn-primary btn-block custom-button social-auth-button twitter" do %>
-                                                    <i class="fa fa-twitter"></i>
-                                                    <span class="hidden-xs hide">Twitter</span>
-                                                <% end %>
-                                            </div>
-                                            <div class="col-xs-4">
-                                                <%= link_to user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary btn-block custom-button social-auth-button google" do %>
-                                                    <i class="fa fa-google"></i>
-                                                    <span class="hidden-xs hide">Google</span>
-                                                <% end %>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="modal-footer">
-                                        <%= f.submit "Log in", class: "btn btn-primary btn-block custom-button" %>
-                                    </div>
-                                </div>
-                            <% end %>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
