@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "aruna/aruna.scss";
+@import "aruna/aruna.css.scss";
 
 /*
 
@@ -10,24 +10,7 @@ LOGIN & REGISTER FORM
 
  */
 form.login_form{
-  .social-auth{
-    margin-bottom: 50px;
 
-    .social-auth-button{
-      width: 100%;
-      display: block !important;
-
-      &.twitter{
-        background: #00acee;
-        border-color: darken( #00acee, 5%);
-      }
-
-      &.facebook{
-        background:#3b5998;
-        border-color: darken( #3b5998, 5%);
-      }
-    }
-  }
 
   .login-or {
     position: relative;
@@ -58,7 +41,34 @@ form.login_form{
     margin-bottom: 0;
   }
 }
+.social-auth{
+  margin-bottom: 50px;
 
+  .social-auth-button{
+    width: 100%;
+    display: block !important;
+
+    &.twitter{
+      background: #00acee;
+      border-color: darken(#00acee, 5%);
+    }
+
+    &.facebook{
+      background:#3b5998;
+      border-color: darken(#3b5998, 5%);
+    }
+
+    &.google{
+      background: #DC4C30;
+      border-color: darken(#DC4C30, 5%);
+    }
+
+    &.disabled{
+      opacity: .65 !important;
+      cursor: not-allowed !important;
+    }
+  }
+}
 /*
 
 FOOTER

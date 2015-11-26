@@ -24,6 +24,7 @@ var Aruna = {
                    queue : false,
                    complete : function() {
                        $('#register-button').fadeIn(500);
+                       $('.registration_form .social-auth-button').removeClass('disabled');
                    }
                });
            } else {
@@ -32,6 +33,7 @@ var Aruna = {
                    queue : false,
                    complete : function() {
                         $('#error-button').fadeIn(500);
+                        $('.registration_form .social-auth-button').addClass('disabled');
                    }
                });
            }
