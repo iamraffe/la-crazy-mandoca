@@ -2211,6 +2211,20 @@ footer {
         }
       }
     }
+    .btn-link {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      color: white;
+      font-size: 14px;
+      @include font-Dosis;
+      background-color: $light-purple;
+      text-transform: uppercase;
+      font-weight: bold;
+      text-decoration: none;
+      &.alternate-btn {
+        background-color: $dark-purple;
+      }
+    }
   }
   .post-window {
     &.window-video {
@@ -2220,7 +2234,7 @@ footer {
       display: none;
     }
     &.window-image {
-      display: none;
+      // display: none;
     }
     @include set-default;
     .window-left {
@@ -2308,11 +2322,79 @@ footer {
       .outer {
         display: table;
         width: 100%;
-        padding: 0 10px;
-        height: 100%;
+        // padding: 0 10px;
+        // height: 100%;
+        padding: 0 10px 0 20px;
+        height: 45px;
         .inner {
           display: table-cell;
           vertical-align: middle;
+        }
+      }
+      .tags-wrap{
+        border-top: solid 1px #f6f6f6;
+        width: 100%;
+        float: left;
+        padding: 15px 10px;
+
+        h3{
+          color: #7e7e7e;
+          font-family: Nunito, Arial, sans-serif;
+          font-size: 16px;
+          line-height: 25px;
+          margin: 0;
+          margin-bottom: 5px;
+        }
+      }
+      #tags-input{
+        width: 100%;
+        float: left;
+      }
+      div.tagsinput{
+        border: solid 2px #e8e8e8;
+        -webkit-border-radius: 4px;
+        -webkit-background-clip: padding-box;
+        -moz-border-radius: 4px;
+        -moz-background-clip: padding;
+        border-radius: 4px;
+        background-clip: padding-box;
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        -ms-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+        height: 215px !important;
+
+        span.tag{
+          background: none;
+          border: none;
+          font-family: Nunito, Arial, sans-serif;
+          font-size: 16px;
+          line-height: 25px;
+          color: #afafaf;
+          padding: 0;
+
+          a{
+            float: left;
+            width: 13px;
+            height: 13px;
+            background: image-url("close-tag.png");
+            text-indent: -9999px;
+            text-transform: capitalize;
+            margin-right: 3px;
+            margin-top: 6px;
+
+            &:hover{
+              background: image-url("close-tag-hover.png");
+            }
+          }
+        }
+        input{
+          font-family: Nunito, Arial, sans-serif;
+          font-size: 16px;
+          line-height: 25px;
+          color: #afafaf !important;
+          width: 100% !important;
         }
       }
     }

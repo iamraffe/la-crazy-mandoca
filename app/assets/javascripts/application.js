@@ -12,9 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui.min
+//= require flexslider.min
 //= require bootstrap
 //= require turbolinks
 //= require tagsinput.min
 //= require lazyload.min
 //= require mCustomScrollbar.min
+//= require jquery.selectBoxIt.min
 //= require_tree .

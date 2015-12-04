@@ -11,7 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151123205221) do
+ActiveRecord::Schema.define(version: 20151203174830) do
+
+  create_table "images", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "title"
+    t.string   "media_url_file_name"
+    t.string   "media_url_content_type"
+    t.integer  "media_url_file_size"
+    t.datetime "media_url_updated_at"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",                                          null: false
@@ -34,5 +49,10 @@ ActiveRecord::Schema.define(version: 20151123205221) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "videos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

@@ -20,6 +20,9 @@
                         <li class=""><a href="/">Categoría 3</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right ">
+                        <li>
+                            <%= link_to "Upload", '#postModal', class: "btn btn-primary btn-block custom-button", :data => {:toggle=>"modal"} %>
+                        </li>
                         <div class="user-box <%= 'loggedout' unless user_signed_in? %>">
                             <% if user_signed_in? %>
                                 <li class="dropdown">
