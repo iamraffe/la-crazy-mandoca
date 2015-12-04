@@ -404,3 +404,58 @@ $(window).resize(function() {
 });
 
 
+Dropzone.autoDiscover = false;
+var ready;
+
+ready = function() {
+ $("#my-awesome-dropzone").dropzone({ // The camelized version of the ID of the form element
+
+    // The configuration we've talked about above
+    autoProcessQueue: false,
+    uploadMultiple: false,
+    parallelUploads: 100,
+    maxFiles: 1,
+    paramName: "post[media_url]",
+    addRemoveLinks: true,
+    clickable: ".file-upload-button", // Define the element that should be used as click trigger to select files.
+    // The setting up of the dropzone
+    init: function() {
+      var myDropzone = this;
+      this.element.querySelector("button[type=submit]").addEventListener("click", function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+         myDropzone.processQueue();
+        // if(formIsReady()){
+        //   myDropzone.processQueue();
+        // }      
+      });
+      this.on("sending", function() {
+      });
+      this.on("success", function(file, response) {
+      });
+      this.on("complete", function(file, response) {
+        window.location.href = "/";
+      });
+      this.on("error", function(file, response) {
+        console.log(response);
+      });
+      this.on("removedfile", function(file) {
+        var id = $(file.previewTemplate).find('.dz-remove').attr('id'); 
+        console.log(id);
+      });
+    }
+  });
+};
+function formIsReady(){
+  var x = $('input[name=title]').val();
+  if (x == null || x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  else{
+    return true;
+  }
+}
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

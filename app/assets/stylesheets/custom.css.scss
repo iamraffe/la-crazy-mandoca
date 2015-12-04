@@ -88,3 +88,13 @@ footer{
     float: none;
   }
 }
+
+
+.dz-default.dz-message{
+  display: none;
+}
+.dz-preview.dz-image-preview{
+  .dz-image{
+    border-radius: 0;
+  }
+}

@@ -20,4 +20,5 @@
 //= require lazyload.min
 //= require mCustomScrollbar.min
 //= require jquery.selectBoxIt.min
+//= require dropzone
 //= require_tree .
