@@ -5,5 +5,9 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resources :images
+
+  resources :videos
+
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", :registrations => "registrations" }
 end

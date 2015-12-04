@@ -1,6 +1,6 @@
 <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <%= form_for @post, html: { multipart: true, class: "dropzone", id: "my-awesome-dropzone" } do |f| %>
+        <%= form_for :image, url: '/images', html: { multipart: true, class: "dropzone", id: "my-awesome-dropzone" } do |f| %>
             <div class="modal-content">
                 <div class="modal-body">
                     <div class="modal-top-wrap">
@@ -42,7 +42,8 @@
                     </div>
                     <div class="post-window window-image">
                         <div class="window-left">
-                            <textarea class="form-control" rows="3" name='title' placeholder="Post title"></textarea>
+                            <%= f.text_field :title, class: "form-control", placeholder: "Post title" %>
+                            <!-- <textarea class="form-control" rows="3" name='title' placeholder="Post title"></textarea> -->
                             <div class="upload-wrap">
                                  <span class="btn btn-success fileinput-button file-upload-button dz-clickable">
                                      <span class="purple">DRAG/BROWSE IMAGE</span><br /><br /><br />

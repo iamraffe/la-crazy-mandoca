@@ -415,7 +415,7 @@ ready = function() {
     uploadMultiple: false,
     parallelUploads: 100,
     maxFiles: 1,
-    paramName: "post[media_url]",
+    paramName: "image[media_url]",
     addRemoveLinks: true,
     clickable: ".file-upload-button", // Define the element that should be used as click trigger to select files.
     // The setting up of the dropzone
@@ -427,7 +427,7 @@ ready = function() {
          myDropzone.processQueue();
         // if(formIsReady()){
         //   myDropzone.processQueue();
-        // }      
+        // }
       });
       this.on("sending", function() {
       });
@@ -440,7 +440,7 @@ ready = function() {
         console.log(response);
       });
       this.on("removedfile", function(file) {
-        var id = $(file.previewTemplate).find('.dz-remove').attr('id'); 
+        var id = $(file.previewTemplate).find('.dz-remove').attr('id');
         console.log(id);
       });
     }
