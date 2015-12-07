@@ -1,19 +1,9 @@
-<div class="container">
+<div class="col-sm-7">
     <div class="row">
-        <div class="col-sm-9 right-content">
-            <div class="row">
-                <div class="col-sm-9">
-                    <div class="main-wrap">
-                      <% @posts.each do |post| %>
-                        <% if post.postable_type == 'Video' %>
-                          <%= render partial: "video/show", locals: {post: post} %>
-                        <% else %>
-                          <%= render partial: "image/show", locals: {post: post} %>
-                        <% end %>
-                      <% end %>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="main-wrap">
+        <% @posts.each do |post| %>
+          <%= render partial: "#{post.postable_type.to_s.downcase}/show", locals: {post: post} %>
+        <% end %>
+      </div>
     </div>
 </div>

@@ -14,7 +14,15 @@
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
-      <%= yield %>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <div class="row">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+      </div>
       <%= render 'layouts/footer' %>
       <%= render 'shared/register_modal' %>
       <%= render 'shared/post_modal' %>
