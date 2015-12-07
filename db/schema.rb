@@ -24,8 +24,13 @@ ActiveRecord::Schema.define(version: 20151207023720) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "title"
+    t.string   "media_url_file_name"
+    t.string   "media_url_content_type"
+    t.integer  "media_url_file_size"
+    t.datetime "media_url_updated_at"
     t.integer  "postable_id"
     t.string   "postable_type"
   end
@@ -33,21 +38,22 @@ ActiveRecord::Schema.define(version: 20151207023720) do
   add_index "posts", ["postable_type", "postable_id"], name: "index_posts_on_postable_type_and_postable_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",                                          null: false
+    t.string   "encrypted_password",     default: "",                                          null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,                                           null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                                                   null: false
+    t.datetime "updated_at",                                                                   null: false
     t.string   "provider"
     t.string   "uid"
     t.string   "username"
+    t.string   "image",                  default: "http://localhost:3000/assets/avatar01.jpg"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
