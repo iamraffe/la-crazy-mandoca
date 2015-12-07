@@ -241,9 +241,9 @@ var Aruna = {
 
         jQuery('.modal-top-menu button').click(Aruna.switchWindow);
         jQuery('#myCombobox').on("change", Aruna.switchWindowPost);
-        jQuery(window).on("scroll", function() {
-            jQuery('.main-post').not('.post-page').each(Aruna.stickyButtons);
-        });
+        // jQuery(window).on("scroll", function() {
+        //     jQuery('.main-post').not('.post-page').each(Aruna.stickyButtons);
+        // });
        // jQuery('input, textarea').placeholder();
         jQuery('.scroll-top').on('click', Aruna.scrollTop);
         this.slidePostCreator();

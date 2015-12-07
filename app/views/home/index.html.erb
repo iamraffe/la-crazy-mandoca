@@ -1,16 +1,19 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-10 col md-offset-1">
-      <% @posts.each do |post| %>
-        <article class="row">
-          <h1><%= post.postable.title %></h1>
-          <% if post.postable_type == 'Video' %>
-            <%=raw post.postable.media %>
-          <% else %>
-            <%= image_tag post.postable.media.url(:medium) %>
-          <% end %>
-        </article>
-      <% end %>
+    <div class="row">
+        <div class="col-sm-9 right-content">
+            <div class="row">
+                <div class="col-sm-9">
+                    <div class="main-wrap">
+                      <% @posts.each do |post| %>
+                        <% if post.postable_type == 'Video' %>
+                          <%= render partial: "video/show", locals: {post: post} %>
+                        <% else %>
+                          <%= render partial: "image/show", locals: {post: post} %>
+                        <% end %>
+                      <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

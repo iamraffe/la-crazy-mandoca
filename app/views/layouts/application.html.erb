@@ -2,19 +2,22 @@
 <html>
 <head>
   <title>La Crazy Mandoca</title>
+  <%= favicon_link_tag 'la-crazy-mandoca-logo.png' %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <%= render 'layouts/shim' %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <% flash.each do |message_type, message| %>
-      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
-    <% end %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
-    <%= render 'shared/register_modal' %>
-    <%= render 'shared/post_modal' %>
+    <section id="main" role="main">
+      <%= render 'layouts/header' %>
+      <% flash.each do |message_type, message| %>
+        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <% end %>
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= render 'shared/register_modal' %>
+      <%= render 'shared/post_modal' %>
+    </section>
   </body>
 </html>
