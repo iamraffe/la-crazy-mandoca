@@ -459,3 +459,7 @@ function formIsReady(){
 
 $(document).ready(ready);
 $(document).on('page:load', ready);
+
+// $('.post-submit').on('click', function(e){
+//     // $('form').submit();
+// });

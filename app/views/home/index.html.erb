@@ -5,7 +5,7 @@
         <article class="row">
           <h1><%= post.postable.title %></h1>
           <% if post.postable_type == 'Video' %>
-            <iframe width="560" height="315" src="<%= post.postable.media %>" frameborder="0" allowfullscreen></iframe>
+            <%=raw post.postable.media %>
           <% else %>
             <%= image_tag post.postable.media.url(:medium) %>
           <% end %>

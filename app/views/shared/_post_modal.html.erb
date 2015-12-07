@@ -1,29 +1,29 @@
 <div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="postModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <%= form_for :image, url: '/images', html: { multipart: true, class: "dropzone", id: "my-awesome-dropzone" } do |f| %>
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="modal-top-wrap">
-                        <div class="half">
-                            <div class="append">Type</div>
-                            <select name="test" id="myCombobox">
-                                <option value="window-image">Image Post</option>
-                                <option value="window-video">Video Post</option>
-                            </select>
-                        </div>
-                        <div class="half category-combobox">
-                            <select name="test" id="categoryCombobox">
-                                <option class="blue-background" value="SelectBoxIt is:" rel="#348dd1">Category #Mandoca Stuff</option>
-                                <option class="red-background" value="a jQuery Plugin" rel="#d5aa27">Category #Nerd/2</option>
-                                <option class="green-background" value="a Select Box Replacement" rel="#38c574">Category #Caliente</option>
-                                <option class="purple-background" value="a Stateful UI Widget" rel="#7e00ff">Category #Sweet</option>
-                            </select>
-                        </div>
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-top-wrap">
+                    <div class="half">
+                        <div class="append">Type</div>
+                        <select name="test" id="myCombobox">
+                            <option value="window-image">Image Post</option>
+                            <option value="window-video">Video Post</option>
+                        </select>
                     </div>
-                    <div class="post-window window-video">
+                    <div class="half category-combobox">
+                        <select name="test" id="categoryCombobox">
+                            <option class="blue-background" value="SelectBoxIt is:" rel="#348dd1">Category #Mandoca Stuff</option>
+                            <option class="red-background" value="a jQuery Plugin" rel="#d5aa27">Category #Nerd/2</option>
+                            <option class="green-background" value="a Select Box Replacement" rel="#38c574">Category #Caliente</option>
+                            <option class="purple-background" value="a Stateful UI Widget" rel="#7e00ff">Category #Sweet</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="post-window window-video">
+                    <%= form_for :video, url: '/videos', html: { multipart: true } do |f| %>
                         <div class="window-left">
-                            <textarea class="form-control" rows="3" placeholder="Post title"></textarea>
-                            <input type="text" class="form-control" placeholder="Paste your link here (Youtube, Vimeo)"/>
+                            <textarea class="form-control" name="video[title]"  placeholder="Post title"></textarea>
+                            <input type="text" class="form-control" name="video[media]" placeholder="Paste your link here (Youtube, Vimeo)"/>
                         </div>
                         <aside>
                             <div class="outer">
@@ -39,8 +39,13 @@
                                 <input name="tags" class="tags-selector" value="" />
                             </div>
                         </aside>
-                    </div>
-                    <div class="post-window window-image">
+                        <div class="modal-bottom-menu">
+                            <button class="btn btn-link btn-block post-submit" type="submit">Upload</button>
+                        </div>
+                    <% end %>
+                </div>
+                <div class="post-window window-image">
+                    <%= form_for :image, url: '/images', html: { multipart: true, class: "dropzone", id: "my-awesome-dropzone" } do |f| %>
                         <div class="window-left">
                             <%= f.text_field :title, class: "form-control", placeholder: "Post title" %>
                             <!-- <textarea class="form-control" rows="3" name='title' placeholder="Post title"></textarea> -->
@@ -69,13 +74,15 @@
                                 <input name="tags" class="tags-selector" value="" />
                             </div>
                         </aside>
-                    </div>
-
-                    <div class="modal-bottom-menu">
-                        <button class="btn btn-link btn-block" type="submit">Upload</button>
-                    </div>
+                        <div class="modal-bottom-menu">
+                            <button class="btn btn-link btn-block post-submit" type="submit">Upload</button>
+                        </div>
+                    <% end %>
                 </div>
+
+
             </div>
-        <% end %>
+        </div>
+
     </div>
 </div>
