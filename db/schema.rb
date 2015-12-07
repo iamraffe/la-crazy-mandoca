@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206230742) do
+ActiveRecord::Schema.define(version: 20151207023720) do
 
   create_table "images", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -20,14 +20,17 @@ ActiveRecord::Schema.define(version: 20151206230742) do
     t.string   "media_content_type"
     t.integer  "media_file_size"
     t.datetime "media_updated_at"
+    t.string   "title"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "title"
-    t.string   "type"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "postable_id"
+    t.string   "postable_type"
   end
+
+  add_index "posts", ["postable_type", "postable_id"], name: "index_posts_on_postable_type_and_postable_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -58,6 +61,7 @@ ActiveRecord::Schema.define(version: 20151206230742) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "media"
+    t.string   "title"
   end
 
 end

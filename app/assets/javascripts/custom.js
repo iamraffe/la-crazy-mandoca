@@ -415,7 +415,7 @@ ready = function() {
     uploadMultiple: false,
     parallelUploads: 100,
     maxFiles: 1,
-    paramName: "image[media_url]",
+    paramName: "image[media]",
     addRemoveLinks: true,
     clickable: ".file-upload-button", // Define the element that should be used as click trigger to select files.
     // The setting up of the dropzone

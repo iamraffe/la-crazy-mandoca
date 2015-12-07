@@ -3,8 +3,12 @@
     <div class="col-md-10 col md-offset-1">
       <% @posts.each do |post| %>
         <article class="row">
-          <h1><%= post.title %></h1>
-          <%= image_tag post.media_url.url(:medium) %>
+          <h1><%= post.postable.title %></h1>
+          <% if post.postable_type == 'Video' %>
+            <iframe width="560" height="315" src="<%= post.postable.media %>" frameborder="0" allowfullscreen></iframe>
+          <% else %>
+            <%= image_tag post.postable.media.url(:medium) %>
+          <% end %>
         </article>
       <% end %>
     </div>

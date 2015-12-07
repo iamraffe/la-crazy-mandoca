@@ -13,8 +13,11 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(image_params)
-    # byebug
     @image.save
+    @image.create_post
+    # @image.profile = Image.create!
+    # byebug
+    # @image.save
 
     redirect_to root_path
   end
@@ -42,6 +45,6 @@ class ImagesController < ApplicationController
 
 private
   def image_params
-    params.require(:image).permit(:title, :media_url)
+    params.require(:image).permit(:title, :media)
   end
 end
