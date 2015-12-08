@@ -2,10 +2,14 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:400,300,700);
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "aruna/aruna.css.scss";
+@import "aruna/aruna.scss";
 @import "aruna/mCustomScrollbar.css";
 @import "aruna/tagsinput.css";
 @import "aruna/selectBoxIt.css";
+
+section#main{
+  margin-top: 15px;
+}
 
 /*
 

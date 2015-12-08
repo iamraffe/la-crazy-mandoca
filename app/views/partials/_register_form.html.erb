@@ -1,55 +1,54 @@
-<div class="col-xs-12">
-    <%= form_for(:user, url: registration_path(:user), :html => {:class => "registration_form form-disabled"}) do |f| %>
-        <div class="row">
-            <div class="col-sm-8 border-right">
-                <div class="input-group">
-                  <span class="input-group-addon">Username:</span>
-                  <%= f.text_field :username, class: "form-control", autofocus: true %>
-                </div>
-
-                <div class="input-group">
-                  <span class="input-group-addon">Email:</span>
-                  <%= f.email_field :email, class: "form-control" %>
-                </div>
-
-                <div class="input-group">
-                  <span class="input-group-addon">Password:</span>
-                  <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
-                </div>
-
-                <div class="input-group">
-                  <span class="input-group-addon">Confirm password:</span>
-                  <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
-                </div>
+<%= form_for(:user, url: registration_path(:user), :html => {:class => "registration_form form-disabled"}) do |f| %>
+    <div class="row">
+        <div class="col-sm-8 border-right">
+            <div class="input-group">
+              <span class="input-group-addon">Username:</span>
+              <%= f.text_field :username, class: "form-control", autofocus: true %>
             </div>
-            <div class="col-sm-4">
-                <div class="vertical-half">
-                    <div class="custom-checkbox-vertical custom-checkbox">
-                        <p>I promise only to have fun here and I fully agree with the</p>
-                        <input type="checkbox" value="check1" name="check" id="agreeTerms" />
-                        <label for="agreeTerms"><a target="_blank" href="#">Terms of Agreement.</a></label>
-                    </div>
-                </div>
-                <div class="vertical-half social-auth">
-                    <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-block custom-button social-auth-button disabled facebook" do %>
-                         <i class="fa fa-facebook"></i>
-                        <span class="hidden-xs hide">Facebook</span>
-                    <% end %>
-                    <%= link_to user_omniauth_authorize_path(:twitter), class: "btn btn-primary btn-block custom-button social-auth-button disabled twitter" do %>
-                        <i class="fa fa-twitter"></i>
-                        <span class="hidden-xs hide">Twitter</span>
-                    <% end %>
-                    <%= link_to user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary btn-block custom-button social-auth-button disabled google" do %>
-                        <i class="fa fa-google"></i>
-                        <span class="hidden-xs hide">Google</span>
-                    <% end %>
-                </div>
+
+            <div class="input-group">
+              <span class="input-group-addon">Email:</span>
+              <%= f.email_field :email, class: "form-control" %>
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon">Password:</span>
+              <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+            </div>
+
+            <div class="input-group">
+              <span class="input-group-addon">Confirm password:</span>
+              <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
             </div>
         </div>
-        <div class="modal-footer">
-            <input name="submit" id="register-button" type="submit" value="NICE, REGISTER ME!" class="btn btn-primary btn-block custom-button" />
-            <button id="error-button" class="btn btn-block btn-info custom-button disabled">WHY DON'T YOU AGREE WITH OUR ToS?</button>
+        <div class="col-sm-4">
+            <div class="vertical-half">
+                <div class="custom-checkbox-vertical custom-checkbox">
+                    <p>I promise only to have fun here and I fully agree with the</p>
+                    <input type="checkbox" value="check1" name="check" id="agreeTerms" />
+                    <label for="agreeTerms"><a target="_blank" href="#">Terms of Agreement.</a></label>
+                </div>
+            </div>
+            <div class="vertical-half social-auth">
+                <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-primary btn-block custom-button social-auth-button disabled facebook" do %>
+                     <i class="fa fa-facebook"></i>
+                    <span class="hidden-xs hide">Facebook</span>
+                <% end %>
+                <%= link_to user_omniauth_authorize_path(:twitter), class: "btn btn-primary btn-block custom-button social-auth-button disabled twitter" do %>
+                    <i class="fa fa-twitter"></i>
+                    <span class="hidden-xs hide">Twitter</span>
+                <% end %>
+                <%= link_to user_omniauth_authorize_path(:google_oauth2), class: "btn btn-primary btn-block custom-button social-auth-button disabled google" do %>
+                    <i class="fa fa-google"></i>
+                    <span class="hidden-xs hide">Google</span>
+                <% end %>
+            </div>
         </div>
-    <% end %>
-</div>
+    </div>
+    <div class="modal-footer">
+        <input name="submit" id="register-button" type="submit" value="NICE, REGISTER ME!" class="btn btn-primary btn-block custom-button" />
+        <button id="error-button" class="btn btn-block btn-info custom-button disabled">WHY DON'T YOU AGREE WITH OUR ToS?</button>
+    </div>
+<% end %>
+
 
