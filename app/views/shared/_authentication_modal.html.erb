@@ -1,0 +1,22 @@
+<div class="modal fade" id="authenticationModal" tabindex="-1" role="dialog" aria-labelledby="authenticationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-top-menu">
+                    <div class="half">
+                        <button class="btn btn-link btn-block" rel="register-window">Register new account</button>
+                    </div>
+                    <div class="half">
+                        <button class="btn btn-link btn-block" rel="login-window">Login</button>
+                    </div>
+                </div>
+                <div class="modal-window register-window">
+                    <%= render "partials/register_form" %>
+                </div>
+                <div class="modal-window login-window">
+                     <%= render "partials/login_form" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

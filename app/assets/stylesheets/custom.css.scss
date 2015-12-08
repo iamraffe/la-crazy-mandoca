@@ -98,3 +98,46 @@ footer{
     border-radius: 0;
   }
 }
+
+
+/*
+
+AUTH PAGE
+
+ */
+.auth-page{
+  margin-top: 75px;
+  padding-bottom: 150px;
+
+  img{
+    width: 300px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
+  .modal-footer{
+    width: 50%;
+    margin: 50px auto;
+    float: none;
+    display: block;
+
+    // .btn{
+    //   display: block;
+    // }
+    input[type=submit]{
+      display: block;
+
+      &#register-button{
+        display: none;
+      }
+    }
+  }
+  .vertical-half {
+    border-top: solid 1px #f6f6f6;
+    float: left;
+    width: 100%;
+    padding: 7.5px 20px;
+    &:first-child {
+      border-top: none;
+    }
+  }
+}

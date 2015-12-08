@@ -21,7 +21,11 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right ">
                         <li>
-                            <%= link_to "Upload", '#postModal', class: "btn btn-primary btn-block custom-button", :data => {:toggle=>"modal"} %>
+                            <% if user_signed_in? %>
+                                <%= link_to "Upload", '#postModal', class: "btn btn-primary btn-block custom-button", :data => {:toggle=>"modal"} %>
+                            <% else %>
+                                <%= link_to "Upload", new_user_session_path, class: "btn btn-primary btn-block custom-button" %>
+                            <% end %>
                         </li>
                         <div class="user-box <%= 'loggedout' unless user_signed_in? %>">
                             <% if user_signed_in? %>
@@ -33,13 +37,12 @@
                                         <span class="name"><%= current_user.username %></span>
                                     <% end %>
                                     <ul class="dropdown-menu drop-down">
-                                        <li class="counters-line hidden-xs text-center">
+<!--                                         <li class="counters-line hidden-xs text-center">
                                             <span>Login to post &amp; more</span>
-                                        </li>
+                                        </li> -->
                                         <li class="buttons-line">
                                             <ul class="list-unstyled">
                                                 <li><%= link_to "Sign Out", 'users/sign_out', method: :delete, class: "btn btn-primary btn-block custom-button", :data => {:toggle=>"modal"} %></li>
-                                                <li><%= link_to "Register", '#registerModal', class: "btn btn-primary btn-block custom-button", :data => {:toggle=>"modal"} %></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -55,8 +58,8 @@
                                         </li>
                                         <li class="buttons-line">
                                             <ul class="list-unstyled">
-                                                <li><%= link_to "Login", '#loginModal', class: "btn btn-primary btn-block custom-button", :data => {:toggle=>"modal"} %></li>
-                                                <li><%= link_to "Register", '#registerModal', class: "btn btn-primary btn-block custom-button", :data => {:toggle=>"modal"} %></li>
+                                                <li><%= link_to "Login", '#authenticationModal', class: "btn btn-primary btn-block custom-button login-button", :data => {:toggle=>"modal"}, rel: 'login-window' %></li>
+                                                <li><%= link_to "Register", '#authenticationModal', class: "btn btn-primary btn-block custom-button register-button", :data => {:toggle=>"modal"}, rel: 'register-window' %></li>
                                             </ul>
                                         </li>
                                     </ul>
