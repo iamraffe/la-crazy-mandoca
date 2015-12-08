@@ -28,7 +28,7 @@
                                 <li class="dropdown">
                                     <%= link_to '#', class: "dropdown-toggle", :data => {:toggle=>"dropdown"} do %>
                                         <figure>
-                                            <%= image_tag(current_user.image, class: 'img-circle') %>
+                                            <%= image_tag(current_user.avatar.url(:thumb), class: 'img-circle') %>
                                         </figure>
                                         <span class="name"><%= current_user.username %></span>
                                     <% end %>
