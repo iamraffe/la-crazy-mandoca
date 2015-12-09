@@ -13,7 +13,7 @@
  *= require custom
  *= require_self
  *= require font-awesome
- *= mCustomScrollbar.css
-*= tagsinput.css
-*= selectBoxIt.css
+ *= mCustomScrollbar
+ *= tagsinput
+ *= selectBoxIt
  */
