@@ -1,5 +1,5 @@
 <div class="article-top">
-    <h1><a href="#"><%= post.postable.title %></a></h1>
+    <h1><%= link_to post.postable.title, post_with_title_path(type: "#{post.postable_type.to_s.downcase}s", id: post.postable.id, :title => post.postable.title) %></h1>
     <hr />
     <div class="counters-line">
         <div class="pull-left">
