@@ -2,6 +2,7 @@ class VideosController < ApplicationController
   before_action :add_embed_media_to_video, only: [:create, :update]
   def create
     @video = Video.new(video_params)
+    @video.user = current_user
     @video.save
     @video.create_post
     redirect_to root_path
@@ -15,6 +16,6 @@ class VideosController < ApplicationController
     end
 
     def video_params
-      params.require(:video).permit(:title, :media)
+      params.require(:video).permit(:title, :media, :category)
     end
 end

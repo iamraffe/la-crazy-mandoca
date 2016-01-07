@@ -12,7 +12,10 @@ class ImagesController < ApplicationController
   end
 
   def create
+    category = find_category
     @image = Image.new(image_params)
+    @image.user = current_user
+    @image.category = category
     @image.save
     @image.create_post
     # @image.profile = Image.create!
@@ -46,5 +49,9 @@ class ImagesController < ApplicationController
 private
   def image_params
     params.require(:image).permit(:title, :media)
+  end
+
+  def find_category
+    Category.find(params[:image][:category])
   end
 end

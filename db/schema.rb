@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151207023720) do
+ActiveRecord::Schema.define(version: 20160107163707) do
+
+  create_table "categories", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
 
   create_table "images", force: :cascade do |t|
     t.datetime "created_at",         null: false
@@ -21,7 +27,12 @@ ActiveRecord::Schema.define(version: 20151207023720) do
     t.integer  "media_file_size"
     t.datetime "media_updated_at"
     t.string   "title"
+    t.integer  "user_id"
+    t.integer  "category_id"
   end
+
+  add_index "images", ["category_id"], name: "index_images_on_category_id"
+  add_index "images", ["user_id"], name: "index_images_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at",    null: false
@@ -58,10 +69,15 @@ ActiveRecord::Schema.define(version: 20151207023720) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "videos", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "media"
     t.string   "title"
+    t.integer  "user_id"
+    t.integer  "category_id"
   end
+
+  add_index "videos", ["category_id"], name: "index_videos_on_category_id"
+  add_index "videos", ["user_id"], name: "index_videos_on_user_id"
 
 end

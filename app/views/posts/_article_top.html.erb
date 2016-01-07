@@ -3,13 +3,13 @@
     <hr />
     <div class="counters-line">
         <div class="pull-left">
-            <div class="date"><i class="icon-date"></i> 23.04</div>
-            <div class="user"><i class="icon-user"></i> <a href="#">helloworld</a></div>
-            <div class="comments"><i class="icon-comments"></i> <a href="#">63</a></div>
+            <div class="date"><i class="icon-date"></i> <%= time_ago_in_words(post.postable.created_at) %></div>
+            <div class="user"><i class="icon-user"></i> <a href="#"><%= post.postable.user.username %></a></div>
+            <!-- <div class="comments"><i class="icon-comments"></i> <a href="#">63</a></div> -->
         </div>
         <div class="pull-right">
-            <div class="like"><a href="#"><i class="icon-like"></i> 21</a></div>
-            <div class="dislike"><a href="#"><i class="icon-dislike"></i> 4012</a></div>
+<!--             <div class="like"><a href="#"><i class="icon-like"></i> 21</a></div>
+            <div class="dislike"><a href="#"><i class="icon-dislike"></i> 4012</a></div> -->
         </div>
     </div>
     <div class="buttons-bar">
