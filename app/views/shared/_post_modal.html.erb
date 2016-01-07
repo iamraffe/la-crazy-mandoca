@@ -47,6 +47,7 @@
                 <div class="post-window window-image">
                     <%= form_for :image, url: '/images', html: { multipart: true, class: "dropzone", id: "my-awesome-dropzone" } do |f| %>
                         <div class="window-left">
+                            <div class="dropzone-previews" id="files-photos" class="files"></div>
                             <%= f.text_field :title, class: "form-control", placeholder: "Post title" %>
                             <!-- <textarea class="form-control" rows="3" name='title' placeholder="Post title"></textarea> -->
                             <div class="upload-wrap">
@@ -56,9 +57,9 @@
 <!--                                     <input class="fileupload-init" type="file" name="files[]" rel="files-photos"> -->
 
                                 </span>
-                                <div class="dropzone-previews" id="files-photos" class="files"></div>
                                 <!-- <div id="files-photos" class="files"></div> -->
                             </div>
+
                         </div>
                         <aside>
                             <div class="outer">
