@@ -19,6 +19,7 @@ gem 'omniauth-oauth2', '~> 1.3.1'
 gem "omniauth-google-oauth2"
 gem "font-awesome-rails"
 gem 'yt', '~> 0.25.5'
+gem 'friendly_id'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
