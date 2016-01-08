@@ -46,12 +46,12 @@ class ImagesController < ApplicationController
     @image.destroy
   end
 
-private
-  def image_params
-    params.require(:image).permit(:title, :media)
-  end
+  private
+    def image_params
+      params.require(:image).permit(:title, :media)
+    end
 
-  def find_category
-    Category.find(params[:image][:category])
-  end
+    def find_category
+      Category.find(params[:image][:category])
+    end
 end

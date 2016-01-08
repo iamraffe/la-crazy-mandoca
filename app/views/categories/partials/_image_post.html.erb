@@ -1,0 +1,11 @@
+<article class="main-post">
+    <%= render partial: 'categories/partials/post_header', locals: {post: post} %>
+    <div class="article-content">
+        <figure>
+            <div class="corner-tag blue">
+                <a href="/categories/<%= post.category.slug %>"><%= post.category.name %></a>
+            </div>
+            <%= image_tag post.media.url(:large) %>
+        </figure>
+    </div>
+</article>

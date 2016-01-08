@@ -1,12 +1,12 @@
 <article class="main-post">
-    <%= render partial: 'posts/article_top', locals: {post: post} %>
+    <%= render partial: 'categories/partials/post_header', locals: {post: post} %>
     <div class="article-content">
         <figure>
             <div class="corner-tag yellow">
-                <a href="/categories/<%= post.postable.category.slug %>"><%= post.postable.category.name %></a>
+                <a href="/categories/<%= post.category.slug %>"><%= post.category.name %></a>
             </div>
             <div class="video-wrap">
-                <%=raw post.postable.media %>
+                <%=raw post.media %>
             </div>
         </figure>
     </div>

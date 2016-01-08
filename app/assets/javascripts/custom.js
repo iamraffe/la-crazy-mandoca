@@ -48,16 +48,16 @@ var Aruna = {
             effect : "fadeIn"
         });
 
-        $('#myCombobox').selectBoxIt({
+        $('.myCombobox').selectBoxIt({
             autoWidth: false
         });
-        $('#categoryCombobox').selectBoxIt({
+        $('.categoryCombobox').selectBoxIt({
             autoWidth: false
         });
-        $('#categoryCombobox').bind({
+        $('.categoryCombobox').bind({
             "change" : function(ev, obj) {
-                var color = $('#categoryComboboxSelectBoxItOptions').find('.selectboxit-focus').attr('rel');
-                $('#categoryComboboxSelectBoxIt').css({background : color});
+                var color = $('.categoryComboboxSelectBoxItOptions').find('.selectboxit-focus').attr('rel');
+                $('.categoryComboboxSelectBoxIt').css({background : color});
             }
         });
         $('#myTab a').click(function (e) {
@@ -240,7 +240,7 @@ var Aruna = {
         //     .parent().addClass($.support.fileInput ? undefined : 'disabled');
 
         jQuery('.modal-top-menu button').click(Aruna.switchWindow);
-        jQuery('#myCombobox').on("change", Aruna.switchWindowPost);
+        jQuery('.myCombobox').on("change", Aruna.switchWindowPost);
         // jQuery(window).on("scroll", function() {
         //     jQuery('.main-post').not('.post-page').each(Aruna.stickyButtons);
         // });
