@@ -2,7 +2,6 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-
                 <div class="post-window window-video">
                     <%= form_for :video, url: '/videos', html: { multipart: true } do |f| %>
                         <div class="modal-top-wrap">
@@ -14,7 +13,7 @@
                                 </select>
                             </div>
                             <div class="half category-combobox">
-                                <%= raw(display_categories('video')) %>
+                                <%= raw(display_categories) %>
                             </div>
                         </div>
                         <div class="window-left">
@@ -51,22 +50,18 @@
                                 </select>
                             </div>
                             <div class="half category-combobox">
-                                <%= raw(display_categories('image')) %>
+                                <%= raw(display_categories) %>
                             </div>
                         </div>
                         <div class="window-left">
                             <div class="dropzone-previews" id="files-photos" class="files"></div>
                             <input type="text" class="form-control" name="post[title]" placeholder="Post title"/>
-                            <!-- <%= f.text_field :title, class: "form-control", placeholder: "Post title" %> -->
-                            <!-- <textarea class="form-control" rows="3" name='title' placeholder="Post title"></textarea> -->
                             <div class="upload-wrap">
                                  <span class="btn btn-success fileinput-button file-upload-button dz-clickable">
                                      <span class="purple">DRAG/BROWSE IMAGE</span><br /><br /><br />
                                      <span>PNG, GIF or JPG accepted. <br /> Max Size is 5MB.</span>
-<!--                                     <input class="fileupload-init" type="file" name="files[]" rel="files-photos"> -->
 
                                 </span>
-                                <!-- <div id="files-photos" class="files"></div> -->
                             </div>
 
                         </div>
@@ -89,10 +84,7 @@
                         </div>
                     <% end %>
                 </div>
-
-
             </div>
         </div>
-
     </div>
 </div>

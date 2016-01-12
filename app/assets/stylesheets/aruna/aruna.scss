@@ -115,7 +115,7 @@ hr {
 // .right-content {
 //   float: right;
 // }
-header {
+header#main-header {
   @include set-default;
   position: fixed;
   top: 0;
@@ -750,7 +750,7 @@ header {
   @include set-default;
   margin-top: 20px;
   padding-bottom: 80px;
-  &>h1 {
+  &>h1, &> header h1 {
     color: #afafaf;
     font-size: 14px;
     line-height: 40px;
@@ -1622,7 +1622,7 @@ footer {
 .profile-wrap {
   float: left;
   width: 100%;
-  margin-left: -15px;
+  // margin-left: -15px;
   background-position: center center;
   background-position: center center;
   -webkit-background-size: cover;
@@ -1667,7 +1667,8 @@ footer {
       @include font-Nunito;
       font-size: 16px;
       line-height: 16px;
-      color: white;
+      // color: white;
+      color: $h1-color;
       font-weight: 300;
       margin: 0 0 5px;
       float: left;
@@ -1676,7 +1677,8 @@ footer {
     .counters {
       float: left;
       width: 100%;
-      color: white;
+      // color: white;
+      color: $h1-color$h1-color;
       @include font-Dosis;
       font-size: 14px;
       font-weight: normal;
@@ -1689,7 +1691,8 @@ footer {
     float: left;
     margin-left: 30px;
     @include font-Dosis;
-    color: white;
+    // color: white;
+    color: $h1-color;
     font-weight: bold;
     text-transform: uppercase;
     .number {
@@ -1704,7 +1707,8 @@ footer {
   .page-name {
     @include font-Dosis;
     font-size: 14px;
-    color: white;
+    // color: white;
+    color: $h1-color;
     width: 100%;
     float: left;
     text-transform: uppercase;

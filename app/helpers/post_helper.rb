@@ -1,6 +1,5 @@
 module PostHelper
-  def display_categories(post_type)
-    post_type = 'post'
+  def display_categories(post_type = 'post')
     categories_select_box = ''
     categories_select_box +=    "<select name='#{post_type}[category_id]' class='categoryCombobox'>"
     Category.all.each do |category|

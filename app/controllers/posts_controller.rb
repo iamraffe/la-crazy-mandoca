@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   def show
-    klass = Object.const_get params[:type].classify
-    @post = klass.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def create
