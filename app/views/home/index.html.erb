@@ -2,7 +2,7 @@
     <div class="row">
       <div class="main-wrap">
         <% @posts.each do |post| %>
-          <%= render partial: "posts/#{post.postable_type.to_s.downcase}_post", locals: {post: post} %>
+          <%= render partial: "#{post.mediable_type.to_s.downcase.pluralize}/partials/show", locals: {post: post} %>
         <% end %>
       </div>
     </div>

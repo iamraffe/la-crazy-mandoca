@@ -1,6 +1,10 @@
 class Post < ActiveRecord::Base
-  belongs_to :postable, :polymorphic => true
-  delegate :media, to: :postable
+  belongs_to :mediable, :polymorphic => true
+  delegate :media, to: :mediable
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+  belongs_to :user
+  belongs_to :category
 end
 # @posts = Post.joins('INNER JOIN "images" ON "images"."id" = "posts"."postable_id"').where(:images => {category_id: 2}).joins('INNER JOIN "videos" ON "videos"."id" = "posts"."postable_id"').where(:videos => {category_id: 2})
 

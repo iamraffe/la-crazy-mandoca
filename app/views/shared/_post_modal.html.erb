@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="window-left">
-                            <textarea class="form-control" name="video[title]"  placeholder="Post title"></textarea>
+                            <textarea class="form-control" name="post[title]"  placeholder="Post title"></textarea>
                             <input type="text" class="form-control" name="video[media]" placeholder="Paste your Youtube link here..."/>
                         </div>
                         <aside>
@@ -56,7 +56,8 @@
                         </div>
                         <div class="window-left">
                             <div class="dropzone-previews" id="files-photos" class="files"></div>
-                            <%= f.text_field :title, class: "form-control", placeholder: "Post title" %>
+                            <input type="text" class="form-control" name="post[title]" placeholder="Post title"/>
+                            <!-- <%= f.text_field :title, class: "form-control", placeholder: "Post title" %> -->
                             <!-- <textarea class="form-control" rows="3" name='title' placeholder="Post title"></textarea> -->
                             <div class="upload-wrap">
                                  <span class="btn btn-success fileinput-button file-upload-button dz-clickable">

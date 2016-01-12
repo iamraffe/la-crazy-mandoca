@@ -1,11 +1,13 @@
 <article class="main-post">
-    <%= render partial: 'categories/partials/post_header', locals: {post: post} %>
+    <%= render partial: 'posts/shared/post_top', locals: {post: post} %>
     <div class="article-content">
         <figure>
-            <div class="corner-tag blue">
+            <div class="corner-tag yellow">
                 <a href="/categories/<%= post.category.slug %>"><%= post.category.name %></a>
             </div>
-            <%= image_tag post.media.url(:large) %>
+            <div class="video-wrap">
+                <%=raw post.mediable.media %>
+            </div>
         </figure>
     </div>
 </article>

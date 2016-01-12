@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160112164303) do
+ActiveRecord::Schema.define(version: 20160112192551) do
 
   create_table "categories", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20160112164303) do
     t.string   "slug"
   end
 
-  add_index "categories", ["name"], name: "index_categories_on_name"
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -43,22 +42,23 @@ ActiveRecord::Schema.define(version: 20160112164303) do
     t.string   "media_content_type"
     t.integer  "media_file_size"
     t.datetime "media_updated_at"
-    t.string   "title"
-    t.integer  "user_id"
-    t.integer  "category_id"
   end
-
-  add_index "images", ["category_id"], name: "index_images_on_category_id"
-  add_index "images", ["user_id"], name: "index_images_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "postable_id"
-    t.string   "postable_type"
+    t.string   "title"
+    t.integer  "mediable_id"
+    t.string   "mediable_type"
+    t.integer  "user_id"
+    t.integer  "category_id"
+    t.string   "slug"
   end
 
-  add_index "posts", ["postable_type", "postable_id"], name: "index_posts_on_postable_type_and_postable_id"
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id"
+  add_index "posts", ["mediable_type", "mediable_id"], name: "index_posts_on_mediable_type_and_mediable_id"
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -88,15 +88,9 @@ ActiveRecord::Schema.define(version: 20160112164303) do
   add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
   create_table "videos", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "media"
-    t.string   "title"
-    t.integer  "user_id"
-    t.integer  "category_id"
   end
-
-  add_index "videos", ["category_id"], name: "index_videos_on_category_id"
-  add_index "videos", ["user_id"], name: "index_videos_on_user_id"
 
 end

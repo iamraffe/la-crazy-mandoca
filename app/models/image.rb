@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  has_one :post, :as => :postable
+  has_one :post, :as => :mediable
   belongs_to :user
   belongs_to :category
 
