@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
@@ -8,6 +6,9 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_uniqueness_of :username
   has_many :posts
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   def self.new_with_session(params, session)
     super.tap do |user|
       # if data = session["devise.omniauth_data"] && session["devise.omniauth_data"]["extra"]["raw_info"]

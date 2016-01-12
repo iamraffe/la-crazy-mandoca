@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :categories
 
+  resources :users
+
   # get '/categories/:name' => 'categories#show', :as => :category_with_name
 
   get '/posts/:type/:id/:title' => 'posts#show', :as => :post_with_title
