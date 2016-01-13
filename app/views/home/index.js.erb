@@ -1,0 +1,10 @@
+<% @posts.each do |post| %>
+  $('#my-posts').append('<%= j render partial: "#{post.mediable_type.to_s.downcase.pluralize}/partials/show", locals: {post: post} %>');
+<% end %>
+
+<% if @posts.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate @posts %>');
+<% else %>
+  $(window).off('scroll');
+  $('.pagination').remove();
+<% end %>

@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   acts_as_votable
+  self.per_page = 2
 end
 # @posts = Post.joins('INNER JOIN "images" ON "images"."id" = "posts"."postable_id"').where(:images => {category_id: 2}).joins('INNER JOIN "videos" ON "videos"."id" = "posts"."postable_id"').where(:videos => {category_id: 2})
 
