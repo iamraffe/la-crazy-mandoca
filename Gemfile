@@ -20,6 +20,8 @@ gem "omniauth-google-oauth2"
 gem "font-awesome-rails"
 gem 'yt', '~> 0.25.5'
 gem 'friendly_id'
+gem 'rails_admin'
+gem 'acts_as_votable', '~> 0.10.0'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'

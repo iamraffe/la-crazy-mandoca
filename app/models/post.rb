@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   friendly_id :title, use: :slugged
   belongs_to :user
   belongs_to :category
+  acts_as_votable
 end
 # @posts = Post.joins('INNER JOIN "images" ON "images"."id" = "posts"."postable_id"').where(:images => {category_id: 2}).joins('INNER JOIN "videos" ON "videos"."id" = "posts"."postable_id"').where(:videos => {category_id: 2})
 

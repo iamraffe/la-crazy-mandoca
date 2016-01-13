@@ -1,0 +1,2 @@
+$("#post_<%= @post.id %> .like a span").text("<%= @post.get_upvotes.size %>");
+$("#post_<%= @post.id %> .dislike a span").text("<%= @post.get_downvotes.size %>");

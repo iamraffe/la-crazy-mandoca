@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_many :posts
   extend FriendlyId
   friendly_id :username, use: :slugged
-
+  acts_as_voter
   def self.new_with_session(params, session)
     super.tap do |user|
       # if data = session["devise.omniauth_data"] && session["devise.omniauth_data"]["extra"]["raw_info"]
