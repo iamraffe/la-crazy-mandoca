@@ -466,3 +466,10 @@ $(document).on('page:load', ready);
 
 $(document).on('click', '.login-button, .register-button', Aruna.switchWindow);
 
+$(document).on('click', '.icon-like, .icon-dislike', function(){
+    $(this).addClass('animated rubberBand');
+});
+
+$(document).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', '.icon-like, .icon-dislike', function(){
+    $(this).removeClass('animated rubberBand');
+});

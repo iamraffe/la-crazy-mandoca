@@ -38,6 +38,8 @@ GEM
       tzinfo (~> 1.1)
     acts_as_votable (0.10.0)
     addressable (2.3.8)
+    animate-rails (1.0.9)
+      rails
     arel (6.0.3)
     autoprefixer-rails (6.1.2)
       execjs
@@ -255,6 +257,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
+  animate-rails
   aws-sdk (< 2.0)
   bootstrap-sass
   byebug
