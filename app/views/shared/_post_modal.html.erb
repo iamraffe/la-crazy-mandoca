@@ -17,8 +17,10 @@
                             </div>
                         </div>
                         <div class="window-left">
-                            <textarea class="form-control" name="post[title]"  placeholder="Post title"></textarea>
+                            <input type="text" class="form-control" name="post[title]" placeholder="Post title"/>
+                            <!-- <textarea class="form-control" name="post[title]"  placeholder="Post title"></textarea> -->
                             <input type="text" class="form-control" name="video[media]" placeholder="Paste your Youtube link here..."/>
+                            <img id="youtube-preview" class="hide youtube-preview">
                         </div>
                         <aside>
                             <div class="outer">
@@ -54,7 +56,6 @@
                             </div>
                         </div>
                         <div class="window-left">
-                            <div class="dropzone-previews" id="files-photos" class="files"></div>
                             <input type="text" class="form-control" name="post[title]" placeholder="Post title"/>
                             <div class="upload-wrap">
                                  <span class="btn btn-success fileinput-button file-upload-button dz-clickable">
@@ -63,7 +64,7 @@
 
                                 </span>
                             </div>
-
+                            <div class="upload-preview"></div>
                         </div>
                         <aside>
                             <div class="outer">

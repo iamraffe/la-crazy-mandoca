@@ -73,18 +73,18 @@ var Aruna = {
             placement: "top",
             trigger : "hover"
         });
-        $('#postModal').on('shown.bs.modal', function () {
-            $(".post-window .window-left").not('.small-padding').mCustomScrollbar({
-                scrollInertia : 0,
-                scrollButtons:{
-                    enable: false
-                },
-                advanced:{
-                    updateOnBrowserResize: true,
-                    updateOnContentResize: true
-                }
-            });
-        });
+        // $('#postModal').on('shown.bs.modal', function () {
+        //     $(".post-window .window-left").not('.small-padding').mCustomScrollbar({
+        //         scrollInertia : 0,
+        //         scrollButtons:{
+        //             enable: false
+        //         },
+        //         advanced:{
+        //             updateOnBrowserResize: true,
+        //             updateOnContentResize: true
+        //         }
+        //     });
+        // });
         // $(".top-ten .drop-down").mCustomScrollbar({
         //     scrollInertia : 0,
         //     scrollButtons:{
@@ -412,12 +412,14 @@ ready = function() {
 
     // The configuration we've talked about above
     autoProcessQueue: false,
+    previewsContainer: '.upload-preview',
     uploadMultiple: false,
     parallelUploads: 100,
     maxFiles: 1,
     paramName: "image[media]",
     addRemoveLinks: true,
     clickable: ".file-upload-button", // Define the element that should be used as click trigger to select files.
+    createImageThumbnails: false,
     // The setting up of the dropzone
     init: function() {
       var myDropzone = this;
@@ -428,6 +430,22 @@ ready = function() {
         // if(formIsReady()){
         //   myDropzone.processQueue();
         // }
+      });
+      this.on("addedfile", function(file) {
+        $('.upload-wrap').hide();
+            console.log(file);
+
+         var FR= new FileReader();
+         FR.onload = function(e) {
+             console.log( e.target.result); //This is the base64 data of file(gif) dropped
+             //if you want to display it somewhere in your previewTemplate
+             $('.upload-preview img').attr('src',e.target.result); //setting as src of some img tag with class 'my-preview'
+         };
+         FR.readAsDataURL( file );
+      });
+      this.on("removedfile", function(file) {
+        $('.upload-wrap').show();
+        $('.upload-preview img').attr('src','');
       });
       this.on("sending", function() {
       });
@@ -488,3 +506,14 @@ $(window).bindWithDelay('scroll', function() {
     }
   });
 }, 100);
+
+
+$(document).on('input', 'input[name="video[media]"]', function(e) {
+    var url = $('input[name="video[media]"]').val().split('/');
+    $(this).toggleClass('hide').val('');
+    $("#youtube-preview").attr('src', 'http://img.youtube.com/vi/'+url.pop()+'/sddefault.jpg').toggleClass('hide');
+});
+$(document).on('input', '#cancel-video-upload', function(e) {
+    $('input[name="video[media]"]').toggleClass('hide').val('');
+    $("#youtube-preview").attr('src', '').toggleClass('hide');
+});
