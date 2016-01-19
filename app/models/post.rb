@@ -6,7 +6,6 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   acts_as_votable
-  self.per_page = 2
-  # acts_as_taggable # Alias for acts_as_taggable_on :tags
+  self.per_page = 5
   acts_as_taggable_on :hashtags
 end

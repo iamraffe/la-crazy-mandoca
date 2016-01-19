@@ -27,7 +27,7 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'active_link_to'
 gem 'acts-as-taggable-on', '~> 3.4'
-gem 'sweet-alert'
+# gem 'sweet-alert'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
@@ -35,12 +35,18 @@ group :development, :test do
   gem 'byebug'
 end
 
-group :development do
-  gem 'sqlite3'
-end
-
 group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
 
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+    gem 'sqlite3'
+end
+
+gem 'puma'

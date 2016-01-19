@@ -56,6 +56,7 @@ var Aruna = {
         });
         $('.categoryCombobox').bind({
             "change" : function(ev, obj) {
+                console.log(obj);
                 var color = $('.categoryComboboxSelectBoxItOptions').find('.selectboxit-focus').attr('rel');
                 $('.categoryComboboxSelectBoxIt').css({background : color});
             }
@@ -135,10 +136,12 @@ var Aruna = {
         jQuery('.social-icons .facebook, .social-icons .googleplus, .social-icons .twitter').on('click', function(e) {
             e.preventDefault();
             var href = jQuery(this).data('href');
+            // console.log(href);
             openWindow(href);
         });
 
         function openWindow(url){
+            // console.log(url);
             var width=640;
             var height=460;
             var topPos=window.screen.height/2-(height/2);
@@ -399,6 +402,9 @@ var Aruna = {
 $(document).ready(function() {
     Aruna.init();
 });
+$(document).on('page:load', function() {
+    Aruna.init();
+});
 // $(window).resize(function() {
 //    Aruna.resizeLeftSidebar();
 // });
@@ -509,10 +515,11 @@ $(window).bindWithDelay('scroll', function() {
 
 
 $(document).on('input', 'input[name="video[media]"]', function(e) {
-    var url = $('input[name="video[media]"]').val().split('/');
-    $(this).toggleClass('hide').val('');
+    var url = $('input[name="video[media]"]').val().split('=');
+    $(this).toggleClass('hide');
     $("#youtube-preview").attr('src', 'http://img.youtube.com/vi/'+url.pop()+'/sddefault.jpg').toggleClass('hide');
 });
+
 $(document).on('input', '#cancel-video-upload', function(e) {
     $('input[name="video[media]"]').toggleClass('hide').val('');
     $("#youtube-preview").attr('src', '').toggleClass('hide');

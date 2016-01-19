@@ -3,3 +3,4 @@ var like_button = $("#post_<%= @post.id %> .like a span");
 if(parseInt(like_button.text()) != parseInt("<%= @post.get_upvotes.size %>")){
   $("#post_<%= @post.id %> .like a span").text("<%= @post.get_upvotes.size %>").hide().fadeIn(500);
 }
+$("#post_<%= @post.id %> .count").html("<span class='animated flash'><%= @post.cached_votes_score %></span>");

@@ -35,10 +35,10 @@
             <!-- <a href="#" class='bookmark has-tooltip' data-title="BOOKMARK">bookmark</a> -->
         </div>
         <div class="social-icons ">
-            <a href="javascript:void(0)" data-href="https://www.facebook.com/sharer/sharer.php?u=<%= "#{request.original_url}#{post.mediable_type.to_s.downcase}/#{post.mediable_id}" %>" class='facebook has-tooltip' data-title="Share on Facebook">facebook</a>
-            <a href="javascript:void(0)" data-href="https://twitter.com/intent/tweet?source=tweetbutton&amp;text=<%= post.title %>&amp;url=<%= "#{request.original_url}#{post.mediable_type.to_s.downcase}/#{post.mediable_id}" %>" class='twitter has-tooltip' data-title="Share on Twitter">twitter</a>
-            <a href="javascript:void(0)" data-href="https://plus.google.com/share?url=<%= "#{request.original_url}#{post.mediable_type.to_s.downcase}/#{post.mediable_id}" %>" class='googleplus has-tooltip' data-title="Share on Google +">googleplus</a>
-            <a href="mailto:?subject=<%= post.title %>&amp;body=<%= post.title %><%= "#{request.original_url}#{post.mediable_type.to_s.downcase}/#{post.mediable_id}" %>" class='mail has-tooltip' data-title="Share via Email">mail</a>
+            <a href="javascript:void(0)" data-href="https://www.facebook.com/sharer/sharer.php?u=<%= "#{request.original_url}posts/#{post.slug}" %>" class='facebook has-tooltip' data-title="Share on Facebook">facebook</a>
+            <a href="javascript:void(0)" data-href="https://twitter.com/intent/tweet?source=tweetbutton&amp;text=<%= post.title %>&amp;url=<%= "#{request.original_url}posts/#{post.slug}" %>" class='twitter has-tooltip' data-title="Share on Twitter">twitter</a>
+            <a href="javascript:void(0)" data-href="https://plus.google.com/share?url=<%= "#{request.original_url}posts/#{post.slug}" %>" class='googleplus has-tooltip' data-title="Share on Google +">googleplus</a>
+            <a href="mailto:?subject=<%= post.title %>&amp;body=<%= post.title %>%20<%= "#{request.original_url}posts/#{post.slug}" %>" class='mail has-tooltip' data-title="Share via Email">mail</a>
         </div>
     </div>
 </div>

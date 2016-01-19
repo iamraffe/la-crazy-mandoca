@@ -3,3 +3,4 @@ var dislike_button = $("#post_<%= @post.id %> .dislike a span");
 if(parseInt(dislike_button.text()) != parseInt("<%= @post.get_downvotes.size %>")){
   $("#post_<%= @post.id %> .dislike a span").text("<%= @post.get_downvotes.size %>").hide().fadeIn(500);
 }
+$("#post_<%= @post.id %> .count").html("<span class='animated flash'><%= @post.cached_votes_score %></span>");

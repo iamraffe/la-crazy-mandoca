@@ -4,7 +4,6 @@
 @import "bootstrap";
 @import "aruna/aruna.scss";
 
-
 section#main{
   // margin-top: 15px;
 }
@@ -223,4 +222,20 @@ AUTH PAGE
     -moz-transition: all 2s; // Mozilla
     -o-transition: all 2s; // Opera
     transition: all 2s;
+}
+
+/*
+ARUNA PAGINATOR
+ */
+
+.paginate_separator{
+  float: left;
+  width: 70px;
+  margin-bottom: 40px;
+  // margin-left: 12px;
+}
+
+.pagination{
+  clear: both;
+  float: left;
 }
