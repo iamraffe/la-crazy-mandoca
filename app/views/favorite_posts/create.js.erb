@@ -1,0 +1,1 @@
+$("[data-post=post-<%= @post.id %>]").parent().html("<%= j link_to 'bookmark', favorite_post_path(@post), method: :delete, remote: true, class: 'bookmarked animated has-tooltip flash', data:{title: 'REMOVE FROM FAVORITES', post: 'post-'+@post.id.to_s} %>");

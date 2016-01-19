@@ -1,0 +1,1 @@
+$("[data-post=post-<%= @post.id %>]").parent().html("<%= j link_to 'bookmark', favorite_posts_path(post_id: @post), method: :post, remote: true, class: 'bookmark animated has-tooltip flash', data:{title: 'ADD TO FAVORITES', post: 'post-'+@post.id.to_s} %>");

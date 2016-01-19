@@ -7,7 +7,6 @@ class Post < ActiveRecord::Base
   belongs_to :category
   acts_as_votable
   self.per_page = 2
+  # acts_as_taggable # Alias for acts_as_taggable_on :tags
+  acts_as_taggable_on :hashtags
 end
-# @posts = Post.joins('INNER JOIN "images" ON "images"."id" = "posts"."postable_id"').where(:images => {category_id: 2}).joins('INNER JOIN "videos" ON "videos"."id" = "posts"."postable_id"').where(:videos => {category_id: 2})
-
-# Post.joins('LEFT JOIN "videos" ON "videos"."id" = "posts"."postable_id" AND "postable_type" = "Video"').where(:videos => {category_id: 3}).joins('INNER JOIN "images" ON "images"."id" = "posts"."postable_id" AND "postable_type" = "Image"').where(:images => {category_id: 3})

@@ -25,6 +25,9 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem "animate-rails"
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'active_link_to'
+gem 'acts-as-taggable-on', '~> 3.4'
+gem 'sweet-alert'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
@@ -36,7 +39,7 @@ group :development do
   gem 'sqlite3'
 end
 
-group :production do 
+group :production do
   gem 'pg'
   gem 'rails_12factor'
 end

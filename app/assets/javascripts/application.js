@@ -21,5 +21,6 @@
 //= require mCustomScrollbar.min
 //= require jquery.selectBoxIt.min
 //= require dropzone
+//= require sweet-alert
 //= require_tree .
 

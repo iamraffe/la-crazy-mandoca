@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username, use: :slugged
   acts_as_voter
+  has_many :favorites
+  has_many :favorite_posts, through: :favorites, source: :favorited, source_type: 'Post'
   def self.new_with_session(params, session)
     super.tap do |user|
       # if data = session["devise.omniauth_data"] && session["devise.omniauth_data"]["extra"]["raw_info"]

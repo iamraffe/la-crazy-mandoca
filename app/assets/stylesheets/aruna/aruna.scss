@@ -1034,6 +1034,9 @@ aside {
         &.bookmark {
           background-position: top center;
         }
+        &.bookmarked {
+          background-position: center center;
+        }
         &:hover {
           background-color: darken($very-dark-purple, 5%);
         }

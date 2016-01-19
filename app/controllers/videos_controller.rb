@@ -18,6 +18,6 @@ class VideosController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :category_id)
-    end    
+      params.require(:post).permit(:title, :category_id, :hashtag_list)
+    end
 end

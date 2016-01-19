@@ -14,7 +14,7 @@ class ImagesController < ApplicationController
   def create
     @image = Image.create(image_params)
     @post = current_user.posts.create(post_params.deep_merge({mediable: @image}))
-    redirect_to root_path
+    redirect_to root_path, format: :html
   end
 
   def edit
@@ -44,6 +44,6 @@ class ImagesController < ApplicationController
     end
 
     def post_params
-      params.require(:post).permit(:title, :category_id)
+      params.require(:post).permit(:title, :category_id, :hashtag_list)
     end
 end
