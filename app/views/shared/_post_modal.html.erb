@@ -2,35 +2,35 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
+                <div class="modal-top-wrap">
+                    <div class="half">
+                        <div class="append">Type</div>
+                        <select name="post-type" class="myCombobox">
+                            <option value="window-image">Image Post</option>
+                            <option value="window-video">Video Post</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="post-window window-video">
                     <%= form_for :video, url: '/videos', html: { multipart: true } do |f| %>
-                        <div class="modal-top-wrap">
-                            <div class="half">
-                                <div class="append">Type</div>
-                                <select name="test" class="myCombobox">
-                                    <option value="window-image">Image Post</option>
-                                    <option value="window-video">Video Post</option>
-                                </select>
-                            </div>
+                        <div class="window-left">
                             <div class="half category-combobox">
                                 <%= raw(display_categories) %>
                             </div>
-                        </div>
-                        <div class="window-left">
                             <input type="text" class="form-control" name="post[title]" placeholder="Post title"/>
                             <!-- <textarea class="form-control" name="post[title]"  placeholder="Post title"></textarea> -->
                             <input type="text" class="form-control" name="video[media]" placeholder="Paste your Youtube link here..."/>
                             <img id="youtube-preview" class="hide youtube-preview">
                         </div>
                         <aside>
-                            <div class="outer">
+<!--                             <div class="outer">
                                 <div class="inner">
                                     <div class="custom-checkbox">
                                         <input type="checkbox" value="check1" name="check" id="check7">
                                         <label for="check7">NSFW</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="tags-wrap">
                                 <h3>Tags:</h3>
                                 <input name="tags" class="tags-selector" value="" />
@@ -43,19 +43,10 @@
                 </div>
                 <div class="post-window window-image">
                     <%= form_for :image, url: '/images', html: { multipart: true, class: "dropzone", id: "my-awesome-dropzone" } do |f| %>
-                        <div class="modal-top-wrap">
-                            <div class="half">
-                                <div class="append">Type</div>
-                                <select name="test" class="myCombobox">
-                                    <option value="window-image">Image Post</option>
-                                    <option value="window-video">Video Post</option>
-                                </select>
-                            </div>
+                        <div class="window-left">
                             <div class="half category-combobox">
                                 <%= raw(display_categories) %>
                             </div>
-                        </div>
-                        <div class="window-left">
                             <input type="text" class="form-control" name="post[title]" placeholder="Post title"/>
                             <div class="upload-wrap">
                                  <span class="btn btn-success fileinput-button file-upload-button dz-clickable">
@@ -67,14 +58,14 @@
                             <div class="upload-preview"></div>
                         </div>
                         <aside>
-                            <div class="outer">
+<!--                             <div class="outer">
                                 <div class="inner">
                                     <div class="custom-checkbox">
                                         <input type="checkbox" value="check1" name="check" id="check16">
                                         <label for="check16">NSFW</label>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="tags-wrap">
                                 <h3>Tags:</h3>
                                 <input name="tags" class="tags-selector" value="" />

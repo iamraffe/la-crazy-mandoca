@@ -194,7 +194,7 @@ AUTH PAGE
       margin-left: -27px; }
       .dz-progress, .dz-details{display: none !important;}
       .dz-image img, .youtube-preview{
-          max-height: 275px;
+          // min-height: 275px;
           margin: 0 auto;
           display: block;
           width: 100%;
@@ -238,4 +238,8 @@ ARUNA PAGINATOR
 .pagination{
   clear: both;
   float: left;
+}
+
+.half.category-combobox{
+  margin-bottom: 75px;
 }
