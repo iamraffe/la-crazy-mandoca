@@ -28,7 +28,7 @@ gem 'bootstrap-will_paginate'
 gem 'active_link_to'
 gem 'acts-as-taggable-on', '~> 3.4'
 # gem 'sweet-alert'
-
+gem "figaro"
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
@@ -47,6 +47,7 @@ group :development do
     gem 'capistrano-bundler', require: false
     gem 'capistrano3-puma',   require: false
     gem 'sqlite3'
+    gem 'capistrano-secrets-yml', '~> 1.0.0'
 end
 
 gem 'puma'
