@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :hashtags
+
   resources :favorite_posts, only: [:create, :destroy]
 
   # get '/categories/:name' => 'categories#show', :as => :category_with_name

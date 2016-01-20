@@ -4,7 +4,6 @@
         <% @posts.each do |post| %>
           <%= render partial: "#{post.mediable_type.to_s.downcase.pluralize}/partials/show", locals: {post: post} %>
         <% end %>
-
       </div>
       <hr class="paginate_separator">
       <div id="infinite-scrolling">
@@ -12,3 +11,4 @@
       </div>
     </div>
 </div>
+<%= render partial: "layouts/sidebar" %>

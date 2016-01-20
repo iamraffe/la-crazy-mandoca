@@ -1,18 +1,21 @@
 <div class="col-sm-7">
     <div class="row">
       <div class="main-wrap">
-        <article class="main-post post-page">
+        <article class="post-page">
             <%= render partial: "#{@post.mediable_type.to_s.downcase.pluralize}/partials/show", locals: {post: @post} %>
         </article>
             <div class="article-infos">
-                <h2>Post tags</h2>
+                <h2>Post hashtags</h2>
                 <hr/>
                 <div class="tags">
                     <ul>
-                        <li><a href="#">Bands</a></li>
-                        <li><a href="#">White Snow</a></li>
-                        <li><a href="#">Awesome</a></li>
+                        <% @post.hashtag_list.each do |hashtag| %>
+                            <li><a href="<%= hashtag_path(hashtag) %>"><%= hashtag %></a></li>
+                        <% end %>
                     </ul>
+                    <% if @post.hashtag_list.empty? %>
+                        <p>This post has no hashtags... *sad panda*</p>
+                    <% end %>
                 </div>
 <!--                 <div class="comments-counter">
                     <button class="btn btn-primary custom-button pull-right">Comment</button>
