@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def show
-    @top_5 = Post.all.order('cached_votes_score DESC').limit(5)
+    @top_posts = Post.all.order('cached_votes_score DESC').limit(10)
     @post = Post.friendly.find(params[:id])
   end
 

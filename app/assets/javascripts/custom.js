@@ -439,11 +439,11 @@ ready = function() {
       });
       this.on("addedfile", function(file) {
         $('.upload-wrap').hide();
-            console.log(file);
+            // console.log(file);
 
          var FR= new FileReader();
          FR.onload = function(e) {
-             console.log( e.target.result); //This is the base64 data of file(gif) dropped
+             // console.log( e.target.result); //This is the base64 data of file(gif) dropped
              //if you want to display it somewhere in your previewTemplate
              $('.upload-preview img').attr('src',e.target.result); //setting as src of some img tag with class 'my-preview'
          };
@@ -456,12 +456,39 @@ ready = function() {
       this.on("sending", function() {
       });
       this.on("success", function(file, response) {
+        console.log(response)
       });
       this.on("complete", function(file, response) {
-        window.location.href = "/";
+
       });
       this.on("error", function(file, response) {
-        console.log(response);
+        // console.log(response);
+        var form = $("#my-awesome-dropzone");
+        form.find('.form-group').removeClass('has-error');
+        form.find('span.help-block').remove();
+        $.each(response, function(field, messages) {
+            // console.log(field, messages)
+            var input;
+            input = form.find('input, select, textarea').filter(function() {
+              var name;
+              name = $(this).attr('name');
+              if (name) {
+                return name.match(new RegExp('post' + '\\[' + field + '\\(?'));
+              }
+              // input.closest('.form-group').addClass('has-error');
+              // return input.parent().append('<span class="help-block">' + $.map(messages, function(m) {
+              //   return m.charAt(0).toUpperCase() + m.slice(1);
+              // }).join('<br />') + '</span>');
+            });
+            // console.log(input)
+            input.closest('.form-group').addClass('has-error');
+            input.parent().append('<span class="help-block">' + field.charAt(0).toUpperCase() + field.slice(1) + ": " + $.map(messages, function(m) {
+                return m.charAt(0).toUpperCase() + m.slice(1);
+              }).join('<br />') + '</span>');
+        // response.forEach(function(field, messages){
+        //     console.log(field, messages)
+        // });
+        });
       });
       this.on("removedfile", function(file) {
         var id = $(file.previewTemplate).find('.dz-remove').attr('id');

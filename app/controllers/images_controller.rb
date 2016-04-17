@@ -14,7 +14,12 @@ class ImagesController < ApplicationController
   def create
     @image = Image.create(image_params)
     @post = current_user.posts.create(post_params.deep_merge({mediable: @image}))
-    redirect_to root_path, format: :html
+    # byebug
+    if @post.errors.nil?
+      redirect_to root_path, format: :html
+    else
+      render json: @post.errors, status: :unprocessable_entity
+    end
   end
 
   def edit
