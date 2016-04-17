@@ -2,9 +2,9 @@
     <%= render partial: 'posts/shared/post_top', locals: {post: post} %>
     <div class="article-content">
         <figure>
-            <div class="corner-tag yellow">
+<!--             <div class="corner-tag yellow">
                 <a href="/categories/<%= post.category.slug %>"><%= post.category.name %></a>
-            </div>
+            </div> -->
             <div class="video-wrap">
                 <%=raw post.mediable.media %>
             </div>

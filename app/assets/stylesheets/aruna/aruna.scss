@@ -1016,31 +1016,34 @@ aside {
       float: left;
       height: $buttons-bar-height;
       background-color: $very-dark-purple;
-      a {
-        width: $buttons-bar-height;
-        height: $buttons-bar-height;
-        float: left;
-        text-indent: -9999px;
-        text-transform: uppercase;
-        background-image: image-url("post-buttons.png");
-        -webkit-transition: background-color 0.4s ease-in-out;
-        -moz-transition: background-color 0.4s ease-in-out;
-        -o-transition: background-color 0.4s ease-in-out;
-        -ms-transition: background-color 0.4s ease-in-out;
-        transition: background-color 0.4s ease-in-out;
-        &.repost {
-          background-position: bottom center;
-        }
-        &.bookmark {
-          background-position: top center;
-        }
-        &.bookmarked {
-          background-position: center center;
-        }
-        &:hover {
-          background-color: darken($very-dark-purple, 5%);
+      span:not(.corner-tag){
+        a {
+          width: $buttons-bar-height;
+          height: $buttons-bar-height;
+          float: left;
+          text-indent: -9999px;
+          text-transform: uppercase;
+          background-image: image-url("post-buttons.png");
+          -webkit-transition: background-color 0.4s ease-in-out;
+          -moz-transition: background-color 0.4s ease-in-out;
+          -o-transition: background-color 0.4s ease-in-out;
+          -ms-transition: background-color 0.4s ease-in-out;
+          transition: background-color 0.4s ease-in-out;
+          &.repost {
+            background-position: bottom center;
+          }
+          &.bookmark {
+            background-position: top center;
+          }
+          &.bookmarked {
+            background-position: center center;
+          }
+          &:hover {
+            background-color: darken($very-dark-purple, 5%);
+          }
         }
       }
+
       .count {
         height: $buttons-bar-height;
         background-color: $dark-purple;

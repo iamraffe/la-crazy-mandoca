@@ -22,6 +22,9 @@
     </div>
     <div class="buttons-bar">
         <div class="buttons  pull-right">
+            <div class="corner-tag blue" style="float: left; position: relative; left: 0; top: -1px; border-radius: 0px; padding: 22.5px 15px;">
+                <a href="/categories/<%= post.category.slug %>" style="background-image: none; text-indent: 0; height: auto"><%= post.category.name %></a>
+            </div>
             <!-- <a href="#" class='repost has-tooltip' data-title="REPOST">Repost</a> -->
             <div class="count"><%= post.cached_votes_score %></div>
             <span class="favorite-container">

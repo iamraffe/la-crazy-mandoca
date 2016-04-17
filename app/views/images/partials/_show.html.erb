@@ -2,9 +2,6 @@
     <%= render partial: 'posts/shared/post_top', locals: {post: post} %>
     <div class="article-content">
         <figure>
-            <div class="corner-tag blue">
-                <a href="/categories/<%= post.category.slug %>"><%= post.category.name %></a>
-            </div>
             <%= image_tag post.media %>
         </figure>
     </div>
