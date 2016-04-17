@@ -3,7 +3,12 @@ class VideosController < ApplicationController
   def create
     @video = Video.create(video_params)
     @post = current_user.posts.create(post_params.deep_merge({mediable: @video}))
-    redirect_to root_path
+    if @post.errors.nil? && @video.errors.nil?
+      redirect_to root_path, format: :html
+    else
+      render json: {errors: @post.errors, type: @post.mediable_type}, status: :unprocessable_entity
+    end
+    # redirect_to root_path
   end
 
 

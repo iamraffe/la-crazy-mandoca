@@ -18,7 +18,7 @@ class ImagesController < ApplicationController
     if @post.errors.nil?
       redirect_to root_path, format: :html
     else
-      render json: @post.errors, status: :unprocessable_entity
+      render json: {errors: @post.errors, type: @post.mediable_type}, status: :unprocessable_entity
     end
   end
 

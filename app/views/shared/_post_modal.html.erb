@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div class="post-window window-video">
-                    <%= form_for :video, url: '/videos', html: { multipart: true } do |f| %>
+                    <%= form_for :video, url: '/videos', html: { multipart: true,  class:"video-upload-form" }, remote: true do |f| %>
                         <div class="window-left">
                             <div class="half category-combobox">
                                 <%= raw(display_categories) %>
@@ -44,7 +44,7 @@
                     <% end %>
                 </div>
                 <div class="post-window window-image">
-                    <%= form_for :image, url: '/images', html: { multipart: true, class: "dropzone", id: "my-awesome-dropzone" } do |f| %>
+                    <%= form_for :image, url: '/images', html: { multipart: true, class: "dropzone image-upload-form", id: "my-awesome-dropzone" } do |f| %>
                         <div class="window-left">
                             <div class="half category-combobox">
                                 <%= raw(display_categories) %>

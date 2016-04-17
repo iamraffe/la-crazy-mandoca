@@ -462,11 +462,11 @@ ready = function() {
 
       });
       this.on("error", function(file, response) {
-        // console.log(response);
-        var form = $("#my-awesome-dropzone");
+        // console.log(response, response.errors, response.type.toLowerCase());
+        var form = $("."+response.type.toLowerCase()+"-upload-form");
         form.find('.form-group').removeClass('has-error');
         form.find('span.help-block').remove();
-        $.each(response, function(field, messages) {
+        $.each(response.errors, function(field, messages) {
             // console.log(field, messages)
             var input;
             input = form.find('input, select, textarea').filter(function() {
