@@ -9,4 +9,6 @@ class Post < ActiveRecord::Base
   self.per_page = 5
   acts_as_taggable_on :hashtags
   acts_as_commontable
+  validates :title, presence: true,
+                   uniqueness: true
 end

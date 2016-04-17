@@ -9,12 +9,13 @@ class VideosController < ApplicationController
 
   private
     def add_embed_media_to_video
-      yt_video = Yt::Video.new url: params[:video][:media]
+      yt_video = Yt::Video.new url: params[:video][:url]
       params[:video][:media] = yt_video.embed_html
+      params[:video][:youtube_id] = yt_video.id
     end
 
     def video_params
-      params.require(:video).permit(:media)
+      params.require(:video).permit(:media, :url, :youtube_id)
     end
 
     def post_params
