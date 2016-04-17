@@ -8,7 +8,7 @@ $dark-purple : #158782;
 $purple: #19A19A;
 $very-dark-purple: #0F615D;
 $very-light-purple: #25EDE4;
-$header-height: 80px;
+$header-height: 50px;
 $buttons-bar-height: 55px;
 
 @mixin set-default() {
@@ -195,7 +195,7 @@ header#main-header {
         font-weight: bold;
         text-transform: uppercase;
         @media(min-width: 768px){
-          padding: 30px 25px;
+          padding: 15px 25px;
         }
       }
       @media(min-width: 768px){
@@ -300,10 +300,10 @@ header#main-header {
     // width: 117px;
     float: left;
     text-align: center;
-    padding: 15px 30px;
+    padding: 5px 30px;
     img {
       width: auto;
-      height: 50px;
+      height: 40px;
       display: inline-block;
     }
   }
@@ -340,7 +340,7 @@ header#main-header {
   }
   .navbar-default .navbar-nav>li>a {
     color: white;
-    padding: 30px 25px;
+    padding: 15px 25px;
     @include font-Dosis;
     font-size: 14px;
     font-weight: bold;
