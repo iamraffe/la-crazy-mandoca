@@ -5,7 +5,7 @@
         <div class="pull-left">
             <div class="date"><i class="icon-date"></i> <%= time_ago_in_words(post.created_at) %></div>
             <div class="user"><i class="icon-user"></i>  <a href="/users/<%= post.user.slug %>"><%= post.user.username %></a></div>
-            <!-- <div class="comments"><i class="icon-comments"></i> <a href="#">63</a></div> -->
+            <div class="comments"><i class="icon-comments"></i> <%= post.thread.filtered_comments.count %></div>
         </div>
         <div class="pull-right">
             <div class="like">

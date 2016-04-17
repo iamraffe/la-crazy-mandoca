@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_uniqueness_of :username
   has_many :posts
+  acts_as_commontator
   extend FriendlyId
   friendly_id :username, use: :slugged
   acts_as_voter

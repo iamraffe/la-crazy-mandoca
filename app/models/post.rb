@@ -8,4 +8,5 @@ class Post < ActiveRecord::Base
   acts_as_votable
   self.per_page = 5
   acts_as_taggable_on :hashtags
+  acts_as_commontable
 end

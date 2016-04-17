@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   resources :favorite_posts, only: [:create, :destroy]
 
+  mount Commontator::Engine => '/commontator'
+
   # get '/categories/:name' => 'categories#show', :as => :category_with_name
 
   # get '/posts/:type/:id/:title' => 'posts#show', :as => :post_with_title
