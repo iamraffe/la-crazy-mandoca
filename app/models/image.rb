@@ -2,7 +2,8 @@ class Image < ActiveRecord::Base
   has_one :post, :as => :mediable
   belongs_to :user
 
-  has_attached_file :media, styles: { large: "628x600^", medium: "300x300>", thumb: "100x100>" }
+  # has_attached_file :media, styles: { large: "628x600^", medium: "300x300>", thumb: "100x100>" }
+  has_attached_file :media
   validates_attachment_content_type :media, content_type: /\Aimage\/.*\Z/
 
 
