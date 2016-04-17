@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def show
+    @top_5 = Post.all.order('cached_votes_score DESC').limit(5)
     @post = Post.friendly.find(params[:id])
   end
 
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
     @post.upvote_from current_user
     respond_to do |format|
-      format.js 
+      format.js
     end
   end
 
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
     @post.downvote_from current_user
     respond_to do |format|
-      format.js 
+      format.js
     end
   end
 end
