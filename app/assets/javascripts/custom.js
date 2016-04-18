@@ -542,18 +542,14 @@ $(document).on('input', '#cancel-video-upload', function(e) {
 });
 
 $(document).on("ajax:success", ".video-upload-form", function(e, data, status, xhr){
-    console.log("Video success", e, data, status, xhr)
     window.location.href = "/"
-
 })
 $(document).on("ajax:error", ".video-upload-form", function(e, data, status, xhr){
-    console.log("Video error", e, data, status, xhr)
     var response = data.responseJSON;
     var form = $("."+response.type.toLowerCase()+"-upload-form");
     form.find('.form-group').removeClass('has-error');
     form.find('span.help-block').remove();
     $.each(response.errors, function(field, messages) {
-        console.log(field, messages)
         var input;
         input = form.find('input, select, textarea').filter(function() {
           var name;

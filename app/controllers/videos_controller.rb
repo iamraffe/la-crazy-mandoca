@@ -1,10 +1,6 @@
 class VideosController < ApplicationController
-  # before_action :add_embed_media_to_video, only: [:create, :update]
   def create
     @post = Post.new(post_params)
-    # @video = Video.create(video_params)
-    # @post = current_user.posts.create({mediable: @video})
-    # byebug
     if !@post.valid? 
       render json: {errors: @post.errors, field: "post", type: "Video"}, status: :unprocessable_entity
     else
@@ -15,8 +11,6 @@ class VideosController < ApplicationController
         @post.save
         current_user.posts << @post
         render js: {}
-        # redirect_to root_path
-        # render json: {message: "All is good!", type: @post.mediable_type}, status: :created
       else
         render json: {errors: @video.errors, field: "video", type: "Video"}, status: :unprocessable_entity
       end
