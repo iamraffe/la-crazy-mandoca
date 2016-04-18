@@ -1,9 +1,9 @@
-Category.destroy_all
+
 User.destroy_all
 Post.destroy_all
 Image.destroy_all
 Video.destroy_all
-
+Category.destroy_all
 Category.create({name: "Mandocas"})
 Category.create({name: "Sweet"})
 Category.create({name: "Nerd/2"})
