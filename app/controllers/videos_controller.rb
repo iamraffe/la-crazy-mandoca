@@ -1,26 +1,32 @@
 class VideosController < ApplicationController
-  before_action :add_embed_media_to_video, only: [:create, :update]
+  # before_action :add_embed_media_to_video, only: [:create, :update]
   def create
-    @video = Video.create(video_params)
-    @post = current_user.posts.create(post_params.deep_merge({mediable: @video}))
-    if @post.errors.nil? && @video.errors.nil?
-      redirect_to root_path, format: :html
+    @post = Post.new(post_params)
+    # @video = Video.create(video_params)
+    # @post = current_user.posts.create({mediable: @video})
+    # byebug
+    if !@post.valid? 
+      render json: {errors: @post.errors, field: "post", type: "Video"}, status: :unprocessable_entity
     else
-      render json: {errors: @post.errors, type: @post.mediable_type}, status: :unprocessable_entity
+      @video = Video.new(video_params)
+      if @video.valid?
+        @video.save
+        @post.mediable = @video
+        @post.save
+        current_user.posts << @post
+        render js: {}
+        # redirect_to root_path
+        # render json: {message: "All is good!", type: @post.mediable_type}, status: :created
+      else
+        render json: {errors: @video.errors, field: "video", type: "Video"}, status: :unprocessable_entity
+      end
     end
-    # redirect_to root_path
   end
 
 
   private
-    def add_embed_media_to_video
-      yt_video = Yt::Video.new url: params[:video][:url]
-      params[:video][:media] = yt_video.embed_html
-      params[:video][:youtube_id] = yt_video.id
-    end
-
     def video_params
-      params.require(:video).permit(:media, :url, :youtube_id)
+      params.require(:video).permit(:url)
     end
 
     def post_params

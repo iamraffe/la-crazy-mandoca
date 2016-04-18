@@ -15,10 +15,11 @@ class ImagesController < ApplicationController
     @image = Image.create(image_params)
     @post = current_user.posts.create(post_params.deep_merge({mediable: @image}))
     # byebug
-    if @post.errors.nil?
-      redirect_to root_path, format: :html
-    else
+    if @post.new_record?
       render json: {errors: @post.errors, type: @post.mediable_type}, status: :unprocessable_entity
+    else
+      render json: {message: "All is good!", type: @post.mediable_type}, status: :created
+      # redirect_to root_path, format: :html
     end
   end
 
