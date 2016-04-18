@@ -30,6 +30,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 # gem 'sweet-alert'
 gem "figaro"
 gem 'commontator'
+gem 'capistrano-rails-collection'
 
 group :development, :test do
   gem 'web-console', '~> 2.0'
