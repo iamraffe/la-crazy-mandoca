@@ -457,6 +457,7 @@ ready = function() {
       });
       this.on("success", function(file, response) {
         console.log(response)
+        window.location.href = "/"
       });
       this.on("complete", function(file, response) {
 
