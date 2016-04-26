@@ -16,19 +16,19 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'omniauth-oauth2', '~> 1.3.1'
-gem "omniauth-google-oauth2"
-gem "font-awesome-rails"
+gem 'omniauth-google-oauth2'
+gem 'font-awesome-rails'
 gem 'yt', '~> 0.25.5'
 gem 'friendly_id'
 gem 'rails_admin'
 gem 'acts_as_votable', '~> 0.10.0'
-gem "animate-rails"
+gem 'animate-rails'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'active_link_to'
 gem 'acts-as-taggable-on', '~> 3.4'
 # gem 'sweet-alert'
-gem "figaro"
+gem 'figaro'
 gem 'commontator'
 gem 'capistrano-rails-collection'
 
@@ -36,6 +36,8 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'byebug'
+  gem 'guard'
+  gem 'guard-livereload', require: false
 end
 
 group :production do

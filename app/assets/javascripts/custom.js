@@ -399,10 +399,7 @@ var Aruna = {
     // }
 };
 
-$(document).ready(function() {
-    Aruna.init();
-});
-$(document).on('page:load', function() {
+$(document).on('page:change', function() {
     Aruna.init();
 });
 // $(window).resize(function() {
@@ -487,6 +484,7 @@ ready = function() {
     }
   });
 };
+
 function formIsReady(){
   var x = $('input[name=title]').val();
   if (x == null || x == "") {
@@ -498,8 +496,8 @@ function formIsReady(){
   }
 }
 
-$(document).ready(ready);
-$(document).on('page:load', ready);
+// $(document).ready(ready);
+$(document).on('page:change', ready);
 
 // $('.post-submit').on('click', function(e){
 //     // $('form').submit();
@@ -531,37 +529,4 @@ $(window).bindWithDelay('scroll', function() {
 }, 100);
 
 
-$(document).on('input', 'input[name="video[media]"]', function(e) {
-    var url = $('input[name="video[media]"]').val().split('=');
-    $(this).toggleClass('hide');
-    $("#youtube-preview").attr('src', 'http://img.youtube.com/vi/'+url.pop()+'/sddefault.jpg').toggleClass('hide');
-});
 
-$(document).on('input', '#cancel-video-upload', function(e) {
-    $('input[name="video[media]"]').toggleClass('hide').val('');
-    $("#youtube-preview").attr('src', '').toggleClass('hide');
-});
-
-$(document).on("ajax:success", ".video-upload-form", function(e, data, status, xhr){
-    window.location.href = "/"
-})
-$(document).on("ajax:error", ".video-upload-form", function(e, data, status, xhr){
-    var response = data.responseJSON;
-    var form = $("."+response.type.toLowerCase()+"-upload-form");
-    form.find('.form-group').removeClass('has-error');
-    form.find('span.help-block').remove();
-    $.each(response.errors, function(field, messages) {
-        var input;
-        input = form.find('input, select, textarea').filter(function() {
-          var name;
-          name = $(this).attr('name');
-          if (name) {
-            return name.match(new RegExp(response.field + '\\[' + field + '\\(?'));
-          }
-        });
-        input.closest('.form-group').addClass('has-error');
-        input.parent().append('<span class="help-block">' + field.charAt(0).toUpperCase() + field.slice(1) + ": " + $.map(messages, function(m) {
-            return m.charAt(0).toUpperCase() + m.slice(1);
-          }).join('<br />') + '</span>');
-    });
-})
