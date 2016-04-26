@@ -11,13 +11,6 @@
   <% elsif !user %>
     <p><%= t 'commontator.require_login' %>.</p>
   <% else %>
-    <% if @new_comment.nil? %>
-      <div id="thread_<%= thread.id %>_new_comment_link_div" class="thread_new_comment_link">
-        <%= link_to t('commontator.comment.actions.new'),
-            commontator.new_thread_comment_path(thread, :per_page => per_page),
-            :remote => true %>
-      </div>
-    <% end %>
     <div id="thread_<%= thread.id %>_new_comment_form_div" class="thread_new_comment_form<%=
     hidden_class %>">
       <% unless @new_comment.nil? %>
@@ -28,6 +21,12 @@
       <% end %>
     </div>
 
-
+    <% if @new_comment.nil? %>
+      <div id="thread_<%= thread.id %>_new_comment_link_div" class="thread_new_comment_link">
+        <%= link_to t('commontator.comment.actions.new'),
+            commontator.new_thread_comment_path(thread, :per_page => per_page),
+            :remote => true %>
+      </div>
+    <% end %>
   <% end %>
 </div>
