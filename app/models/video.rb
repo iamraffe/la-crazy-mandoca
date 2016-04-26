@@ -7,7 +7,7 @@ class Video < ActiveRecord::Base
   private
     def handle_youtube
       yt_video = Yt::Video.new url: self.url
-      self.media = yt_video.embed_html
+      self.media = yt_video.embed_html.gsub('//www', 'https://www')
       # byebug
       self.youtube_id = yt_video.id
     end
