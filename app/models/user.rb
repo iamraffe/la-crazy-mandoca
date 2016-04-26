@@ -22,8 +22,6 @@ class User < ActiveRecord::Base
   end
   def self.from_omniauth(auth)
     user = where(provider: auth.provider, uid: auth.uid).first || where(:email => auth.info.email).first || new
-
-
     user.provider = auth.provider
     user.uid = auth.uid
     user.email = auth.info.email
