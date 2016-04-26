@@ -1,4 +1,4 @@
-@media (min-width: 980px) and (max-width: 1199px) {
+@media (min-width: 992px) {
   .widget .post-preview .left {
     width: 45px;
     .small {
@@ -23,8 +23,39 @@
       height: auto;
     }
   }
+    body {
+      padding-top: 160px;
+    }
 }
-@media (min-width: 768px) and (max-width: 999px) {
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-toggle{
+    display: block;
+    position: relative;
+    float: right;
+    margin-right: 15px;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
+  .navbar-collapse{
+    float: none;
+    overflow-x: visible;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-top: 1px solid transparent;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    -webkit-overflow-scrolling: touch;
+  }
+  .navbar-nav > li{
+    float: none;
+  }
+  .collapse{
+    display: none;
+  }
   .article-infos .comments-counter .custom-button {
     padding: 17px 10px;
   }
@@ -80,7 +111,7 @@
   }
     .widget {
       .widget-content {
-          overflow: auto;
+          // overflow: auto;
       }
       .joker {
         figure {
@@ -102,9 +133,9 @@
     right: auto;
     left: 0px;
   }
-    body {
-      padding-top: 160px;
-    }
+    // body {
+    //   padding-top: 160px;
+    // }
   .modal-footer .custom-button.btn-primary {
     padding-bottom: 25px;
     padding-top: 25px;
@@ -122,7 +153,7 @@
     }
   }
 }
-@media (min-width: 200px) and (max-width: 767px) {
+@media (max-width: 991px) {
   .article-infos .comments-counter .text {
     margin-left: 3px;
     margin-right: 17px;
@@ -194,7 +225,7 @@
     width: 40px;
   }
   .main-post .buttons-bar .buttons .count {
-    padding: 0 10px;
+    padding: 0 25px;
   }
   footer .footer-widget {
     margin-bottom: 30px;
@@ -212,9 +243,9 @@
     padding: 10px 50px;
     border: none;
   }
-  body {
-    padding-top: 160px;
-  }
+  // body {
+  //   padding-top: 160px;
+  // }
   .left-aside {
     float: left;
   }
