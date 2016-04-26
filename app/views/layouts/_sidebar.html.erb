@@ -4,7 +4,7 @@
       <!-- <hr /> -->
       <div class="widget-content">
           <div class="post-list">
-              <% @top_posts.to_a.shift(5) { |post, index| index < 5 }.each_with_index do |post, index| %>
+              <% @top_posts.to_a.shift(4) { |post, index| index < 5 }.each_with_index do |post, index| %>
                 <a href="<%= post_path(post) %>">
                   <article>
                     <header style="max-width: 100%; max-height: 200px; overflow-y: hidden; margin-bottom: 15px">
@@ -40,7 +40,7 @@
       </div>
       <div class="widget-content">
           <div class="post-list">
-              <% @top_posts.to_a.drop(5) { |post, index| index < 5 }.each_with_index do |post, index| %>
+              <% @top_posts.to_a.drop(4) { |post, index| index < 5 }.each_with_index do |post, index| %>
                 <a href="<%= post_path(post) %>">
                   <article>
                     <header style="max-width: 100%; max-width: 200px; overflow-y: hidden; margin-bottom: 15px">
@@ -75,6 +75,78 @@
                  style="display:block"
                  data-ad-client="ca-pub-7666235511049102"
                  data-ad-slot="8256447993"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+      </div>
+      <div class="widget-content">
+          <div class="post-list">
+              <% @top_posts.to_a.drop(8) { |post, index| index < 5 }.each_with_index do |post, index| %>
+                <a href="<%= post_path(post) %>">
+                  <article>
+                    <header style="max-width: 100%; max-width: 200px; overflow-y: hidden; margin-bottom: 15px">
+                      <% if post.mediable_type == "Image" %>
+                        <%= image_tag post.media, class: "img-responsive", style: "margin: 0px auto; width: 100%;" %>
+                      <% else %>
+                        <%= image_tag "http://img.youtube.com/vi/#{post.mediable.youtube_id}/mqdefault.jpg", class: "img-responsive", style: "margin: 0px auto; width: 100%;" %>
+                      <% end %>
+                    </header>
+                    <footer class="text">
+                          <h1 class="text-center"><%= post.title %></h1>
+                    </footer>
+                  </article>
+                </a>
+              <% end %>
+          </div>
+      </div>
+      <div class="widget" style="text-align: center">
+          <h2>Ads</h2>
+          <hr/>
+          <div class="widget-content">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- LCM Publicidad 3 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7666235511049102"
+                 data-ad-slot="9733181190"
+                 data-ad-format="auto"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
+      </div>
+      <div class="widget-content">
+          <div class="post-list">
+              <% @top_posts.to_a.drop(12) { |post, index| index < 5 }.each_with_index do |post, index| %>
+                <a href="<%= post_path(post) %>">
+                  <article>
+                    <header style="max-width: 100%; max-width: 200px; overflow-y: hidden; margin-bottom: 15px">
+                      <% if post.mediable_type == "Image" %>
+                        <%= image_tag post.media, class: "img-responsive", style: "margin: 0px auto; width: 100%;" %>
+                      <% else %>
+                        <%= image_tag "http://img.youtube.com/vi/#{post.mediable.youtube_id}/mqdefault.jpg", class: "img-responsive", style: "margin: 0px auto; width: 100%;" %>
+                      <% end %>
+                    </header>
+                    <footer class="text">
+                          <h1 class="text-center"><%= post.title %></h1>
+                    </footer>
+                  </article>
+                </a>
+              <% end %>
+          </div>
+      </div>
+      <div class="widget" style="text-align: center">
+          <h2>Ads</h2>
+          <hr/>
+          <div class="widget-content">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- LCM Publicidad 4 -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-7666235511049102"
+                 data-ad-slot="2209914399"
                  data-ad-format="auto"></ins>
             <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
