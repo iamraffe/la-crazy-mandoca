@@ -141,13 +141,16 @@ header#main-header {
     // height: $header-height;
     // background-color: $purple;
     .user-box {
-      @media(min-width: 768px){
+      @media(min-width: 992px){
         min-width: 160px;
         height: $header-height;
         background-color: $purple;
         float: left;
         text-align: center;
         position: relative;
+      }
+      @media(max-width: 991px){
+        border-top: 1px solid white;
       }
 
 
@@ -194,11 +197,15 @@ header#main-header {
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;
-        @media(min-width: 768px){
+        @media(min-width: 992px){
           padding: 15px 25px;
         }
+        @media(max-width: 991px){
+          padding: 15px 25px;
+          text-align: right;
+        }
       }
-      @media(min-width: 768px){
+      @media(min-width: 992px){
         .drop-down {
           position: absolute;
           top: 100%;
@@ -345,6 +352,9 @@ header#main-header {
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
+    @media(max-width: 991px){
+      text-align: center;
+    }
   }
   .navbar-nav>li>.dropdown-menu {
     padding: 0;

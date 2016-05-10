@@ -9,6 +9,12 @@
 LIB
 
  */
+$screen-sm-min: 992px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
 @import "font-awesome";
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -48,4 +54,31 @@ FLASH MESSAGES
   margin: 25px auto;
   @extend .alert;
   @extend .alert-warning;
+}
+
+
+.modal-dialog{
+  margin: 0 auto;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+
+    &:hover, &:focus{
+      background-color: transparent;
+    }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent;
+}
+
+@media(max-width: 991px){
+  .navbar-nav{
+    margin: 0 -15px;
+  }
 }
