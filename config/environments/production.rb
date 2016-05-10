@@ -86,6 +86,6 @@ Rails.application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
-  config.serve_static_assets = true
+  config.serve_static_files = true
   config.secret_key_base = ENV["SECRET_KEY_BASE"]
 end

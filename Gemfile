@@ -31,7 +31,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'figaro'
 gem 'commontator'
 gem 'capistrano-rails-collection'
-
+gem 'capistrano-rails-console'
 group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'spring'

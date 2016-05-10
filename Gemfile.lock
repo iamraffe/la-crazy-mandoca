@@ -78,6 +78,8 @@ GEM
       capistrano-bundler (~> 1.1)
     capistrano-rails-collection (0.0.3)
       capistrano-rails (~> 1.1.0)
+    capistrano-rails-console (1.0.2)
+      capistrano (>= 3.1.0, < 4.0.0)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
@@ -354,6 +356,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rails-collection
+  capistrano-rails-console
   capistrano-rvm
   capistrano-secrets-yml (~> 1.0.0)
   capistrano3-puma
@@ -389,4 +392,4 @@ DEPENDENCIES
   yt (~> 0.25.5)
 
 BUNDLED WITH
-   1.12.2
+   1.12.3
